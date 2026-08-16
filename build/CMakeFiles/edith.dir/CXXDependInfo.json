@@ -1,0 +1,52 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "Clang",
+	"compiler-simulate-id" : "",
+	"config" : "",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "E:/msys2/home/0xtrensetta/Projects/edith/build",
+	"dir-cur-src" : "E:/msys2/home/0xtrensetta/Projects/edith",
+	"dir-top-bld" : "E:/msys2/home/0xtrensetta/Projects/edith/build",
+	"dir-top-src" : "E:/msys2/home/0xtrensetta/Projects/edith",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\include",
+		"E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\include\\asr",
+		"E:\\msys2\\clang64\\include\\SDL2"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir",
+	"sources" : 
+	{
+		"CMakeFiles/edith.dir/src/asr/asr.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "E:/msys2/home/0xtrensetta/Projects/edith/src/asr/asr.cpp"
+		},
+		"CMakeFiles/edith.dir/src/common-sdl.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "E:/msys2/home/0xtrensetta/Projects/edith/src/common-sdl.cpp"
+		},
+		"CMakeFiles/edith.dir/src/common-whisper.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "E:/msys2/home/0xtrensetta/Projects/edith/src/common-whisper.cpp"
+		},
+		"CMakeFiles/edith.dir/src/common.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "E:/msys2/home/0xtrensetta/Projects/edith/src/common.cpp"
+		},
+		"CMakeFiles/edith.dir/src/main.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "E:/msys2/home/0xtrensetta/Projects/edith/src/main.cpp"
+		}
+	}
+}

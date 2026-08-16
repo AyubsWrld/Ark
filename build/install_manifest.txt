@@ -1,0 +1,2 @@
+C:/Program Files (x86)/edith/bin/edith.exe
+C:/Program Files (x86)/edith/share/sbom/edith.spdx.json

@@ -1,0 +1,32 @@
+[
+{
+  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\edith.dir\\src\\main.cpp.obj.modmap -o CMakeFiles\\edith.dir\\src\\main.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\main.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/main.cpp",
+  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir/src/main.cpp.obj"
+},
+{
+  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\edith.dir\\src\\common-whisper.cpp.obj.modmap -o CMakeFiles\\edith.dir\\src\\common-whisper.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common-whisper.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/common-whisper.cpp",
+  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir/src/common-whisper.cpp.obj"
+},
+{
+  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\edith.dir\\src\\common.cpp.obj.modmap -o CMakeFiles\\edith.dir\\src\\common.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/common.cpp",
+  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir/src/common.cpp.obj"
+},
+{
+  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\edith.dir\\src\\common-sdl.cpp.obj.modmap -o CMakeFiles\\edith.dir\\src\\common-sdl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common-sdl.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/common-sdl.cpp",
+  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir/src/common-sdl.cpp.obj"
+},
+{
+  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @src\\asr\\CMakeFiles\\edasr.dir\\asr.cpp.obj.modmap -o src\\asr\\CMakeFiles\\edasr.dir\\asr.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\asr\\asr.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/asr/asr.cpp",
+  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/src/asr/CMakeFiles/edasr.dir/asr.cpp.obj"
+}
+]

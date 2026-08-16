@@ -1,0 +1,6 @@
+E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir
+E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edit_cache.dir
+E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/rebuild_cache.dir
+E:/msys2/home/0xtrensetta/Projects/edith/build/src/asr/CMakeFiles/edasr.dir
+E:/msys2/home/0xtrensetta/Projects/edith/build/src/asr/CMakeFiles/edit_cache.dir
+E:/msys2/home/0xtrensetta/Projects/edith/build/src/asr/CMakeFiles/rebuild_cache.dir

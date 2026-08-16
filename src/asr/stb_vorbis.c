@@ -174,7 +174,6 @@ extern unsigned int stb_vorbis_get_file_offset(stb_vorbis *f);
 #ifndef STB_VORBIS_NO_PUSHDATA_API
 
 // this API allows you to get blocks of data from any source and hand
-// stb_vorbis_seek_start
 // them to stb_vorbis. you have to buffer them; stb_vorbis will tell
 // you how much it used, and you have to give it the rest next time;
 // and stb_vorbis may not have enough data to work with and you will

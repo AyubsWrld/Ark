@@ -1,0 +1,114 @@
+{
+  "@context" : "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+  "@graph" : 
+  [
+    {
+      "@id" : "_:Build#CreationInfo",
+      "comment" : "This SBOM was generated from the CMakeLists.txt File",
+      "created" : "2026-08-15T22:05:54Z",
+      "createdBy" : 
+      [
+        "https://gitlab.kitware.com/cmake/cmake"
+      ],
+      "specVersion" : "3.0.1",
+      "type" : "CreationInfo"
+    },
+    {
+      "creationInfo" : "_:Build#CreationInfo",
+      "element" : 
+      [
+        {
+          "builtTime" : "2026-08-15T22:05:54Z",
+          "creationInfo" : "_:Build#CreationInfo",
+          "name" : "SDL2:SDL2main",
+          "originatedBy" : 
+          [
+            {
+              "creationInfo" : "_:Build#CreationInfo",
+              "name" : "SDL2",
+              "spdxId" : "urn:SDL2#Organization",
+              "type" : "Organization"
+            }
+          ],
+          "software_packageVersion" : "2.32.10",
+          "spdxId" : "urn:SDL2:SDL2main#Package",
+          "type" : "software_Package"
+        },
+        {
+          "builtTime" : "2026-08-15T22:05:54Z",
+          "creationInfo" : "_:Build#CreationInfo",
+          "name" : "SDL2:SDL2",
+          "originatedBy" : 
+          [
+            {
+              "creationInfo" : "_:Build#CreationInfo",
+              "name" : "SDL2",
+              "spdxId" : "urn:SDL2#Organization",
+              "type" : "Organization"
+            }
+          ],
+          "software_packageVersion" : "2.32.10",
+          "spdxId" : "urn:SDL2:SDL2#Package",
+          "type" : "software_Package"
+        },
+        {
+          "creationInfo" : "_:Build#CreationInfo",
+          "name" : "whisper",
+          "spdxId" : "urn:whisper#Package",
+          "type" : "software_Package"
+        },
+        {
+          "creationInfo" : "_:Build#CreationInfo",
+          "name" : "ggml",
+          "spdxId" : "urn:ggml#Package",
+          "type" : "software_Package"
+        }
+      ],
+      "name" : "edith",
+      "profileConformance" : 
+      [
+        "core",
+        "software"
+      ],
+      "rootElement" : 
+      [
+        {
+          "creationInfo" : "_:Build#CreationInfo",
+          "name" : "edith",
+          "software_packageVersion" : "1.0",
+          "software_primaryPurpose" : "application",
+          "spdxId" : "urn:edith#Package",
+          "type" : "software_Package"
+        }
+      ],
+      "spdxId" : "urn:edith#SPDXDocument",
+      "type" : "SpdxDocument"
+    },
+    {
+      "creationInfo" : "_:Build#CreationInfo",
+      "description" : "Linked Libraries",
+      "from" : "urn:edith#Package",
+      "relationshipType" : "dependsOn",
+      "spdxId" : "urn:Static#Relationship",
+      "to" : 
+      [
+        "urn:SDL2:SDL2main#Package",
+        "urn:SDL2:SDL2#Package"
+      ],
+      "type" : "Relationship"
+    },
+    {
+      "creationInfo" : "_:Build#CreationInfo",
+      "description" : "Required Build-Time Libraries",
+      "from" : "urn:edith#Package",
+      "relationshipType" : "dependsOn",
+      "spdxId" : "urn:Shared#Relationship",
+      "to" : 
+      [
+        "urn:whisper#Package",
+        "urn:ggml#Package"
+      ],
+      "type" : "Relationship"
+    }
+  ]
+}

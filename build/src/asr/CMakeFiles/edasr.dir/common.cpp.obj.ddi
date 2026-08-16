@@ -1,0 +1,9 @@
+{
+  "revision": 0,
+  "rules": [
+    {
+      "primary-output": "src\\asr\\CMakeFiles\\edasr.dir\\common.cpp.obj"
+    }
+  ],
+  "version": 1
+}
