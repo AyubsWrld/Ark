@@ -1,6 +1,6 @@
-add_library(edasr) 
+add_library(arkasr) 
 
-target_sources(edasr
+target_sources(arkasr
     PUBLIC
     asr.cpp
 )
@@ -26,18 +26,16 @@ find_package(SDL2 REQUIRED)
 # )
 
 target_include_directories(
-    edasr
+    arkasr
     PRIVATE
-        ${CMAKE_SOURCE_DIR}/include/asr
-        ${CMAKE_SOURCE_DIR}/include/
+        "${CMAKE_SOURCE_DIR}/include/asr"
+        "${CMAKE_SOURCE_DIR}/include/"
         ${SDL2_INCLUDE_DIR}
         ${WHISPER_INCLUDE_DIR}
 )
 
 target_link_libraries(
-    edasr
+    arkasr
     PRIVATE
         ${SDL2_LIBRARIES}
-        # whisper
-        # ggml
 )

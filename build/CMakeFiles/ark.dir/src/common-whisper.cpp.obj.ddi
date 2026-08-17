@@ -1,0 +1,9 @@
+{
+  "revision": 0,
+  "rules": [
+    {
+      "primary-output": "CMakeFiles\\ark.dir\\src\\common-whisper.cpp.obj"
+    }
+  ],
+  "version": 1
+}

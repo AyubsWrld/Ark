@@ -352,3 +352,9 @@ int main(int argc, char ** argv) {
         std::string model     = "models/ggml-base.en.bin";
         std::string fname_out;
     };
+
+
+
+- Prep output files (Audio file output & text output) 
+- Two different entries whether we are using Voice Activity Detection or not.
+

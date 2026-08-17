@@ -7,7 +7,7 @@ set(
 )
 
 project(
-    edith
+    ark
     LANGUAGES C CXX
     VERSION 1.0
 )
@@ -34,6 +34,7 @@ target_sources(${CMAKE_PROJECT_NAME}
 )
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/asr)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/audio)
 
 
 find_package(SDL2 REQUIRED)
@@ -94,20 +95,22 @@ find_library(
 # -------------------------------------------------------
 
 target_include_directories(
-    edith
+    ${CMAKE_PROJECT_NAME}
     PRIVATE
         "${CMAKE_SOURCE_DIR}/include"
         "${CMAKE_SOURCE_DIR}/include/asr"
+        "${CMAKE_SOURCE_DIR}/include/SDLWrapper"
         ${SDL2_INCLUDE_DIR}
         ${WHISPER_INCLUDE_DIR}
 )
 
 target_link_libraries(
-    edith
+    ${CMAKE_PROJECT_NAME}
     PRIVATE
         ${SDL2_LIBRARIES}
         whisper
         ggml
-        edasr
+        arkasr
+        arkaudio
 )
 

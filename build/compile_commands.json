@@ -1,38 +1,50 @@
 [
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\edith.dir\\src\\main.cpp.obj.modmap -o CMakeFiles\\edith.dir\\src\\main.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\main.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/edith/include/audio -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\ark.dir\\src\\main.cpp.obj.modmap -o CMakeFiles\\ark.dir\\src\\main.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\main.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/main.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir/src/main.cpp.obj"
+  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/ark.dir/src/main.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\edith.dir\\src\\common-whisper.cpp.obj.modmap -o CMakeFiles\\edith.dir\\src\\common-whisper.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common-whisper.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/edith/include/audio -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\ark.dir\\src\\common-whisper.cpp.obj.modmap -o CMakeFiles\\ark.dir\\src\\common-whisper.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common-whisper.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/common-whisper.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir/src/common-whisper.cpp.obj"
+  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/ark.dir/src/common-whisper.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\edith.dir\\src\\common.cpp.obj.modmap -o CMakeFiles\\edith.dir\\src\\common.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/edith/include/audio -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\ark.dir\\src\\common.cpp.obj.modmap -o CMakeFiles\\ark.dir\\src\\common.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/common.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir/src/common.cpp.obj"
+  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/ark.dir/src/common.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\edith.dir\\src\\common-sdl.cpp.obj.modmap -o CMakeFiles\\edith.dir\\src\\common-sdl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common-sdl.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/edith/include/audio -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\ark.dir\\src\\common-sdl.cpp.obj.modmap -o CMakeFiles\\ark.dir\\src\\common-sdl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common-sdl.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/common-sdl.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir/src/common-sdl.cpp.obj"
+  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/ark.dir/src/common-sdl.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\edith.dir\\src\\asr\\asr.cpp.obj.modmap -o CMakeFiles\\edith.dir\\src\\asr\\asr.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\asr\\asr.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/edith/include/audio -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\ark.dir\\src\\asr\\asr.cpp.obj.modmap -o CMakeFiles\\ark.dir\\src\\asr\\asr.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\asr\\asr.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/asr/asr.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir/src/asr/asr.cpp.obj"
+  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/ark.dir/src/asr/asr.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @src\\asr\\CMakeFiles\\edasr.dir\\asr.cpp.obj.modmap -o src\\asr\\CMakeFiles\\edasr.dir\\asr.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\asr\\asr.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/edith/include/audio -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\ark.dir\\src\\audio\\sdl_impl.cpp.obj.modmap -o CMakeFiles\\ark.dir\\src\\audio\\sdl_impl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\audio\\sdl_impl.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/audio/sdl_impl.cpp",
+  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/ark.dir/src/audio/sdl_impl.cpp.obj"
+},
+{
+  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @src\\asr\\CMakeFiles\\arkasr.dir\\asr.cpp.obj.modmap -o src\\asr\\CMakeFiles\\arkasr.dir\\asr.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\asr\\asr.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/asr/asr.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/src/asr/CMakeFiles/edasr.dir/asr.cpp.obj"
+  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/src/asr/CMakeFiles/arkasr.dir/asr.cpp.obj"
+},
+{
+  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include/audio -std=gnu++23 @src\\audio\\CMakeFiles\\arkaudio.dir\\sdl_impl.cpp.obj.modmap -o src\\audio\\CMakeFiles\\arkaudio.dir\\sdl_impl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\audio\\sdl_impl.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/audio/sdl_impl.cpp",
+  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/src/audio/CMakeFiles/arkaudio.dir/sdl_impl.cpp.obj"
 }
 ]

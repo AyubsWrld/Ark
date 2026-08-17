@@ -36,8 +36,10 @@ namespace Ark
         std::string language  = "en";
         std::string model     = "models/ggml-base.en.bin";
         std::string fname_out;
+
     };
 
+    std::ostream& operator<<(std::ostream& o, const FWhisperParameters& params);
     void PrintUsage(int argc, char ** argv, const FWhisperParameters& params);
     [[nodiscard]] FWhisperParameters ParseWhisperParameters(int argc, char ** argv);
     int ASREntry(int argc, char ** argv);
