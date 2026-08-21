@@ -1,10 +1,4 @@
-
-cmake_minimum_required(VERSION 4.3)
-#set(CMAKE_EXPERIMENTAL_GENERATE_SBOM ON)
-set(
-    CMAKE_EXPERIMENTAL_GENERATE_SBOM
-    "ca494ed3-b261-4205-a01f-603c95e4cae0"
-)
+cmake_minimum_required(VERSION 3.16)
 
 project(
     ark
@@ -23,6 +17,8 @@ set(
     "Path to whisper.cpp SDK"
 )
 
+find_package(whisper REQUIRED)
+
 add_executable(${CMAKE_PROJECT_NAME})
 target_sources(${CMAKE_PROJECT_NAME}
     PUBLIC
@@ -38,6 +34,7 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/src/audio)
 
 
 find_package(SDL2 REQUIRED)
+find_package(GGML REQUIRED)
 
 find_path(
     WHISPER_INCLUDE_DIR
@@ -64,36 +61,6 @@ find_library(
     REQUIRED
 )
 
-# -------------------------------------------------------
-# Represent prebuilt dependencies as CMake targets
-# -------------------------------------------------------
-
-# add_library(whisper SHARED IMPORTED)
-#
-# set_target_properties(
-#     whisper
-#     PROPERTIES
-#
-#     IMPORTED_LOCATION
-#         "${WHISPER_SDK_DIR}/bin/whisper.dll"
-#
-#     IMPORTED_IMPLIB
-#         "${WHISPER_LIBRARY}"
-#
-#     INTERFACE_INCLUDE_DIRECTORIES
-#         "${WHISPER_INCLUDE_DIR}"
-#
-#     SPDX_LICENSE
-#         "MIT"
-# )
-#
-#
-# add_library(ggml SHARED IMPORTED)
-
-# -------------------------------------------------------
-# edith
-# -------------------------------------------------------
-
 target_include_directories(
     ${CMAKE_PROJECT_NAME}
     PRIVATE
@@ -108,9 +75,12 @@ target_link_libraries(
     ${CMAKE_PROJECT_NAME}
     PRIVATE
         ${SDL2_LIBRARIES}
+        ${WHISPER_LIBRARIES}
+        ${GGML_LIBRARIES}
         whisper
-        ggml
+        #ggml
         arkasr
         arkaudio
 )
+
 

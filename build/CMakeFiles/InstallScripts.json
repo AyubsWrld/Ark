@@ -1,9 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"E:/msys2/home/0xtrensetta/Projects/edith/build/cmake_install.cmake",
-		"E:/msys2/home/0xtrensetta/Projects/edith/build/src/asr/cmake_install.cmake",
-		"E:/msys2/home/0xtrensetta/Projects/edith/build/src/audio/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

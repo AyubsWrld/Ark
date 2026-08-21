@@ -1,9 +1,0 @@
-{
-  "revision": 0,
-  "rules": [
-    {
-      "primary-output": "src\\audio\\CMakeFiles\\arkaudio.dir\\sdl_impl.cpp.obj"
-    }
-  ],
-  "version": 1
-}

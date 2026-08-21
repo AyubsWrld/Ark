@@ -1,3 +1,0 @@
-ninja_dyndep_version = 1.0
-build src/asr/CMakeFiles/arkasr.dir/asr.cpp.obj: dyndep
-

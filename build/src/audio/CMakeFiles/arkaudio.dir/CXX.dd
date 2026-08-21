@@ -1,3 +1,0 @@
-ninja_dyndep_version = 1.0
-build src/audio/CMakeFiles/arkaudio.dir/sdl_impl.cpp.obj: dyndep
-

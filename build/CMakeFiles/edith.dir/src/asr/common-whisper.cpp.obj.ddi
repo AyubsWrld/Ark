@@ -1,9 +1,0 @@
-{
-  "revision": 0,
-  "rules": [
-    {
-      "primary-output": "CMakeFiles\\edith.dir\\src\\asr\\common-whisper.cpp.obj"
-    }
-  ],
-  "version": 1
-}

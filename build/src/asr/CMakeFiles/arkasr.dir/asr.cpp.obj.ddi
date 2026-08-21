@@ -1,9 +1,0 @@
-{
-  "revision": 0,
-  "rules": [
-    {
-      "primary-output": "src\\asr\\CMakeFiles\\arkasr.dir\\asr.cpp.obj"
-    }
-  ],
-  "version": 1
-}

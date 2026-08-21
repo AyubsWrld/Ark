@@ -1,50 +1,44 @@
 [
 {
-  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/edith/include/audio -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\ark.dir\\src\\main.cpp.obj.modmap -o CMakeFiles\\ark.dir\\src\\main.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\main.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/main.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/ark.dir/src/main.cpp.obj"
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -isystem /usr/local/include/SDL2 -isystem /usr/local/include -std=gnu++2b -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.8 -o CMakeFiles/ark.dir/src/main.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/main.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/main.cpp",
+  "output": "CMakeFiles/ark.dir/src/main.cpp.o"
 },
 {
-  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/edith/include/audio -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\ark.dir\\src\\common-whisper.cpp.obj.modmap -o CMakeFiles\\ark.dir\\src\\common-whisper.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common-whisper.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/common-whisper.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/ark.dir/src/common-whisper.cpp.obj"
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -isystem /usr/local/include/SDL2 -isystem /usr/local/include -std=gnu++2b -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.8 -o CMakeFiles/ark.dir/src/common-whisper.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/common-whisper.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/common-whisper.cpp",
+  "output": "CMakeFiles/ark.dir/src/common-whisper.cpp.o"
 },
 {
-  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/edith/include/audio -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\ark.dir\\src\\common.cpp.obj.modmap -o CMakeFiles\\ark.dir\\src\\common.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/common.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/ark.dir/src/common.cpp.obj"
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -isystem /usr/local/include/SDL2 -isystem /usr/local/include -std=gnu++2b -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.8 -o CMakeFiles/ark.dir/src/common.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/common.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/common.cpp",
+  "output": "CMakeFiles/ark.dir/src/common.cpp.o"
 },
 {
-  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/edith/include/audio -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\ark.dir\\src\\common-sdl.cpp.obj.modmap -o CMakeFiles\\ark.dir\\src\\common-sdl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common-sdl.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/common-sdl.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/ark.dir/src/common-sdl.cpp.obj"
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -isystem /usr/local/include/SDL2 -isystem /usr/local/include -std=gnu++2b -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.8 -o CMakeFiles/ark.dir/src/common-sdl.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/common-sdl.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/common-sdl.cpp",
+  "output": "CMakeFiles/ark.dir/src/common-sdl.cpp.o"
 },
 {
-  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/edith/include/audio -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\ark.dir\\src\\asr\\asr.cpp.obj.modmap -o CMakeFiles\\ark.dir\\src\\asr\\asr.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\asr\\asr.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/asr/asr.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/ark.dir/src/asr/asr.cpp.obj"
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -isystem /usr/local/include/SDL2 -isystem /usr/local/include -std=gnu++2b -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.8 -o CMakeFiles/ark.dir/src/asr/asr.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/asr/asr.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/asr/asr.cpp",
+  "output": "CMakeFiles/ark.dir/src/asr/asr.cpp.o"
 },
 {
-  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/edith/include/audio -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\ark.dir\\src\\audio\\sdl_impl.cpp.obj.modmap -o CMakeFiles\\ark.dir\\src\\audio\\sdl_impl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\audio\\sdl_impl.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/audio/sdl_impl.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/ark.dir/src/audio/sdl_impl.cpp.obj"
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build/src/asr",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include -isystem /usr/local/include/SDL2 -isystem /usr/local/include -std=gnu++2b -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.8 -o CMakeFiles/arkasr.dir/asr.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/asr/asr.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/asr/asr.cpp",
+  "output": "src/asr/CMakeFiles/arkasr.dir/asr.cpp.o"
 },
 {
-  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @src\\asr\\CMakeFiles\\arkasr.dir\\asr.cpp.obj.modmap -o src\\asr\\CMakeFiles\\arkasr.dir\\asr.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\asr\\asr.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/asr/asr.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/src/asr/CMakeFiles/arkasr.dir/asr.cpp.obj"
-},
-{
-  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include/audio -std=gnu++23 @src\\audio\\CMakeFiles\\arkaudio.dir\\sdl_impl.cpp.obj.modmap -o src\\audio\\CMakeFiles\\arkaudio.dir\\sdl_impl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\audio\\sdl_impl.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/audio/sdl_impl.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/src/audio/CMakeFiles/arkaudio.dir/sdl_impl.cpp.obj"
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build/src/audio",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/usr/local/include -I/usr/local/include/SDL2 -std=gnu++2b -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.8 -o CMakeFiles/arkaudio.dir/sdl_impl.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/audio/sdl_impl.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/audio/sdl_impl.cpp",
+  "output": "src/audio/CMakeFiles/arkaudio.dir/sdl_impl.cpp.o"
 }
 ]
