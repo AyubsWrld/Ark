@@ -17,6 +17,7 @@
 #include "common-sdl.h"
 #include "common.h"
 #include "common-whisper.h"
+#include "sdl_impl.hpp"
 #include "whisper.h"
 
 #include <chrono>
@@ -124,8 +125,8 @@ namespace Ark
         // noise.
         
         const bool use_vad = n_samples_step <= 0; // sliding window mode uses VAD
-        const int n_new_line = !use_vad ? std::max(1, params.length_ms / params.step_ms - 1) : 1; // number of steps to print new line
 
+        const int n_new_line = !use_vad ? std::max(1, params.length_ms / params.step_ms - 1) : 1; // number of steps to print new line
         params.no_timestamps  = !use_vad;
         params.no_context    |= use_vad;
         params.max_tokens     = 0;
@@ -245,8 +246,8 @@ namespace Ark
                     is_running = sdl_poll_events();
                     if (!is_running) {
                         break;
+                        audio.get(params.step_ms, pcmf32_new);
                     }
-                    audio.get(params.step_ms, pcmf32_new);
 
                     if ((int) pcmf32_new.size() > 2*n_samples_step) {
                         fprintf(stderr, "\n\n%s: WARNING: cannot process audio fast enough, dropping audio ...\n\n", __func__);

@@ -1,0 +1,4 @@
+#!/bin/bash
+DATE="$(date "+%Y-%d-%m").plan.md"
+vim $DATE
+

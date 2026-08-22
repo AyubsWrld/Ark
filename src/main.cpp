@@ -11,8 +11,8 @@
 #include "whisper.h"
 #include "asr.hpp"
 
-#include <chrono>
 #include <cstdio>
+#include <chrono>
 #include <fstream>
 #include <string>
 #include <thread>

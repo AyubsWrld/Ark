@@ -694,7 +694,7 @@ src/asr/CMakeFiles/arkasr.dir/asr.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/stdbool.h \
   /usr/local/include/ggml-cpu.h /usr/local/include/ggml-backend.h \
   /usr/local/include/ggml-alloc.h \
-  /Users/ayubmohamed/Desktop/Ark/include/common-sdl.h \
+  /Users/ayubmohamed/Desktop/Ark/include/common/common-sdl.h \
   /usr/local/include/SDL2/SDL.h /usr/local/include/SDL2/SDL_main.h \
   /usr/local/include/SDL2/SDL_stdinc.h \
   /usr/local/include/SDL2/SDL_config.h \
@@ -850,7 +850,7 @@ src/asr/CMakeFiles/arkasr.dir/asr.cpp.o: \
   /usr/local/include/SDL2/SDL_misc.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/mutex \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__mutex/lock_guard.h \
-  /Users/ayubmohamed/Desktop/Ark/include/common.h \
+  /Users/ayubmohamed/Desktop/Ark/include/common/common.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__functional/is_transparent.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__iterator/erase_if_container.h \
@@ -970,7 +970,8 @@ src/asr/CMakeFiles/arkasr.dir/asr.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__filesystem/u8path.h \
-  /Users/ayubmohamed/Desktop/Ark/include/common-whisper.h \
+  /Users/ayubmohamed/Desktop/Ark/include/common/common-whisper.h \
+  /Users/ayubmohamed/Desktop/Ark/include/audio/sdl_impl.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/chrono \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__chrono/calendar.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/c++/v1/__chrono/convert_to_tm.h \

@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ark.dir/src/common.cpp.o.d"
   "CMakeFiles/ark.dir/src/main.cpp.o"
   "CMakeFiles/ark.dir/src/main.cpp.o.d"
+  "CMakeFiles/ark.dir/src/utils/PlatformMisc.cpp.o"
+  "CMakeFiles/ark.dir/src/utils/PlatformMisc.cpp.o.d"
   "ark"
   "ark.pdb"
 )

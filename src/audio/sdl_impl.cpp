@@ -1,21 +1,25 @@
 #include "sdl_impl.hpp"
+
 #include <cstdio>
 #include <iostream>
 
 namespace Ark 
 {
-    FAudioAsyncDevice::FAudioAsyncDevice(int len_ms) {
+    FAudioAsyncDevice::FAudioAsyncDevice(int len_ms) 
+    {
         m_len_ms = len_ms;
         m_running = false;
     }
 
-    FAudioAsyncDevice::~FAudioAsyncDevice() {
+    FAudioAsyncDevice::~FAudioAsyncDevice() 
+    {
         if (m_dev_id_in) {
             SDL_CloseAudioDevice(m_dev_id_in);
         }
-    }
 
-    bool FAudioAsyncDevice::Init(int capture_id, int sample_rate) {
+    }
+    bool FAudioAsyncDevice::Init(int capture_id, int sample_rate) 
+    {
         SDL_LogSetPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO);
 
         if (SDL_Init(SDL_INIT_AUDIO) < 0) {
@@ -77,6 +81,11 @@ namespace Ark
         m_audio.resize((m_sample_rate*m_len_ms)/1000);
 
         return true;
+    }
+
+    bool FAudioAsyncDevice::Init(int sample_rate)
+    {
+      return Init(0, sample_rate);
     }
 
     bool FAudioAsyncDevice::Resume() {
@@ -146,7 +155,6 @@ namespace Ark
 
         if (n_samples > m_audio.size()) {
             n_samples = m_audio.size();
-
             stream += (len - (n_samples * sizeof(float)));
         }
 

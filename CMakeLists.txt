@@ -22,14 +22,15 @@ find_package(whisper REQUIRED)
 add_executable(${CMAKE_PROJECT_NAME})
 target_sources(${CMAKE_PROJECT_NAME}
     PUBLIC
-
     src/main.cpp
     src/common-whisper.cpp
     src/common.cpp
     src/common-sdl.cpp
 )
 
+#add_subdirectory(${CMAKE_SOURCE_DIR}/src/common) # this behaves weirdly on darwin. 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/asr)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/utils)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/audio)
 
 
@@ -78,9 +79,10 @@ target_link_libraries(
         ${WHISPER_LIBRARIES}
         ${GGML_LIBRARIES}
         whisper
-        #ggml
         arkasr
         arkaudio
+        arkutils
+        #arkcommon
 )
 
 

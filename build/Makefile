@@ -143,6 +143,19 @@ arkasr/fast:
 .PHONY : arkasr/fast
 
 #=============================================================================
+# Target rules for targets named arkutils
+
+# Build rule for target.
+arkutils: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 arkutils
+.PHONY : arkutils
+
+# fast build rule for target.
+arkutils/fast:
+	$(MAKE) $(MAKESILENT) -f src/utils/CMakeFiles/arkutils.dir/build.make src/utils/CMakeFiles/arkutils.dir/build
+.PHONY : arkutils/fast
+
+#=============================================================================
 # Target rules for targets named arkaudio
 
 # Build rule for target.
@@ -275,6 +288,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ark.dir/build.make CMakeFiles/ark.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/utils/PlatformMisc.o: src/utils/PlatformMisc.cpp.o
+.PHONY : src/utils/PlatformMisc.o
+
+# target to build an object file
+src/utils/PlatformMisc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ark.dir/build.make CMakeFiles/ark.dir/src/utils/PlatformMisc.cpp.o
+.PHONY : src/utils/PlatformMisc.cpp.o
+
+src/utils/PlatformMisc.i: src/utils/PlatformMisc.cpp.i
+.PHONY : src/utils/PlatformMisc.i
+
+# target to preprocess a source file
+src/utils/PlatformMisc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ark.dir/build.make CMakeFiles/ark.dir/src/utils/PlatformMisc.cpp.i
+.PHONY : src/utils/PlatformMisc.cpp.i
+
+src/utils/PlatformMisc.s: src/utils/PlatformMisc.cpp.s
+.PHONY : src/utils/PlatformMisc.s
+
+# target to generate assembly for a file
+src/utils/PlatformMisc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ark.dir/build.make CMakeFiles/ark.dir/src/utils/PlatformMisc.cpp.s
+.PHONY : src/utils/PlatformMisc.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -286,6 +323,7 @@ help:
 	@echo "... ark"
 	@echo "... arkasr"
 	@echo "... arkaudio"
+	@echo "... arkutils"
 	@echo "... src/asr/asr.o"
 	@echo "... src/asr/asr.i"
 	@echo "... src/asr/asr.s"
@@ -301,6 +339,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/utils/PlatformMisc.o"
+	@echo "... src/utils/PlatformMisc.i"
+	@echo "... src/utils/PlatformMisc.s"
 .PHONY : help
 
 

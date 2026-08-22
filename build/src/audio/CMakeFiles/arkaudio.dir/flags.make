@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/usr/local/include -I/usr/local/include/SDL2
 
-CXX_FLAGS = -std=gnu++2b -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.8
+CXX_FLAGS = -g -std=gnu++2b -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.8
 

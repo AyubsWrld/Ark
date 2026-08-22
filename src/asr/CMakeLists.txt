@@ -28,14 +28,15 @@ find_package(SDL2 REQUIRED)
 target_include_directories(
     arkasr
     PRIVATE
-        "${CMAKE_SOURCE_DIR}/include/asr"
-        "${CMAKE_SOURCE_DIR}/include/"
-        ${SDL2_INCLUDE_DIR}
+        "${CMAKE_SOURCE_DIR}/include/asr/"
+        "${CMAKE_SOURCE_DIR}/include/audio/"
+        "${CMAKE_SOURCE_DIR}/include/common/"
+        ${SDL2_INCLUDE_DIRS}
         ${WHISPER_INCLUDE_DIR}
 )
 
 target_link_libraries(
     arkasr
     PRIVATE
-        ${SDL2_LIBRARIES}
+        #${SDL2_LIBRARIES}
 )

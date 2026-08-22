@@ -22,7 +22,7 @@ CMAKE_AR:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDef
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Debug
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -255,6 +255,15 @@ ark_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 ark_SOURCE_DIR:STATIC=/Users/ayubmohamed/Desktop/Ark
 
+//Value Computed by CMake
+arkutils_BINARY_DIR:STATIC=/Users/ayubmohamed/Desktop/Ark/build/src/utils
+
+//Value Computed by CMake
+arkutils_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+arkutils_SOURCE_DIR:STATIC=/Users/ayubmohamed/Desktop/Ark/src/utils
+
 //The directory containing a CMake configuration file for ggml.
 ggml_DIR:PATH=/usr/local/lib/cmake/ggml
 
@@ -365,7 +374,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

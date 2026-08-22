@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/ayubmohamed/Desktop/Ark/src/common-whisper.cpp" "CMakeFiles/ark.dir/src/common-whisper.cpp.o" "gcc" "CMakeFiles/ark.dir/src/common-whisper.cpp.o.d"
   "/Users/ayubmohamed/Desktop/Ark/src/common.cpp" "CMakeFiles/ark.dir/src/common.cpp.o" "gcc" "CMakeFiles/ark.dir/src/common.cpp.o.d"
   "/Users/ayubmohamed/Desktop/Ark/src/main.cpp" "CMakeFiles/ark.dir/src/main.cpp.o" "gcc" "CMakeFiles/ark.dir/src/main.cpp.o.d"
+  "/Users/ayubmohamed/Desktop/Ark/src/utils/PlatformMisc.cpp" "CMakeFiles/ark.dir/src/utils/PlatformMisc.cpp.o" "gcc" "CMakeFiles/ark.dir/src/utils/PlatformMisc.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

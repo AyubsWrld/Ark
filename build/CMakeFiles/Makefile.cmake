@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.30.2/CMakeSystem.cmake"
   "/Users/ayubmohamed/Desktop/Ark/src/asr/CMakeLists.txt"
   "/Users/ayubmohamed/Desktop/Ark/src/audio/CMakeLists.txt"
+  "/Users/ayubmohamed/Desktop/Ark/src/utils/CMakeLists.txt"
   "/usr/local/Cellar/cmake/3.30.2/share/cmake/Modules/CMakeCCompiler.cmake.in"
   "/usr/local/Cellar/cmake/3.30.2/share/cmake/Modules/CMakeCCompilerABI.c"
   "/usr/local/Cellar/cmake/3.30.2/share/cmake/Modules/CMakeCInformation.cmake"
@@ -146,6 +147,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.30.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/asr/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/utils/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/audio/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -153,5 +155,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ark.dir/DependInfo.cmake"
   "src/asr/CMakeFiles/arkasr.dir/DependInfo.cmake"
+  "src/utils/CMakeFiles/arkutils.dir/DependInfo.cmake"
   "src/audio/CMakeFiles/arkaudio.dir/DependInfo.cmake"
   )
