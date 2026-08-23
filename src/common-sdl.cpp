@@ -136,26 +136,32 @@ bool audio_async::clear() {
 
 // callback to be called by SDL
 void audio_async::callback(uint8_t * stream, int len) {
-    if (!m_running) {
-        return;
+    // Check if our audio device is currently capturing audio.
+    if (!m_running) { 
+        return; // If not, return prematurely 
     }
 
+    // Get the number of samples captured, len is sizeof(stream) in bytes.
     size_t n_samples = len / sizeof(float);
 
+    // Check if the number of samples we captured is greater than our audio buff.
     if (n_samples > m_audio.size()) {
-        n_samples = m_audio.size();
-
-        stream += (len - (n_samples * sizeof(float)));
+        n_samples = m_audio.size(); // If so, truncate the number of samples.
+        // Push the stream forward so that we only capture the newest bytes?
+        stream += (len - (n_samples * sizeof(float))); 
     }
 
     //fprintf(stderr, "%s: %zu samples, pos %zu, len %zu\n", __func__, n_samples, m_audio_pos, m_audio_len);
 
     {
+        // Lock the mutex. 
         std::lock_guard<std::mutex> lock(m_mutex);
 
+        // Check if the current position + the number of samples we wish to write is larger 
+        // than the size of our ring buffer.
         if (m_audio_pos + n_samples > m_audio.size()) {
+            // If so we perform two memcpys 
             const size_t n0 = m_audio.size() - m_audio_pos;
-
             memcpy(&m_audio[m_audio_pos], stream, n0 * sizeof(float));
             memcpy(&m_audio[0], stream + n0 * sizeof(float), (n_samples - n0) * sizeof(float));
         } else {

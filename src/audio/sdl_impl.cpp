@@ -146,32 +146,53 @@ namespace Ark
     }
 
     // callback to be called by SDL
+    // in the case that the number of samples is larger than
     void FAudioAsyncDevice::Callback(uint8_t * stream, int len) {
+        // Check if our audio device is currently capturing audio.
         if (!m_running) {
-            return;
+            return; // If not, return prematurely 
         }
 
+        // Get the number of samples captured, len is sizeof(stream) in bytes.
         size_t n_samples = len / sizeof(float);
 
+        // Check if the number of samples we captured is greater than our audio buff.
         if (n_samples > m_audio.size()) {
             n_samples = m_audio.size();
+
+            // Push the stream forward so that we only capture the newest bytes?
             stream += (len - (n_samples * sizeof(float)));
         }
 
-        //fprintf(stderr, "%s: %zu samples, pos %zu, len %zu\n", __func__, n_samples, m_audio_pos, m_audio_len);
+        fprintf(stderr,
+                "%s: %zu samples, pos %zu, len %zu\n",
+                __func__,
+                n_samples,
+                m_audio_pos,
+                m_audio_len);
 
         {
+            // Lock the mutex. 
             std::lock_guard<std::mutex> lock(m_mutex);
 
+            // Check if the current position + the number of samples we wish to write is larger 
+            // than the size of our ring buffer.
             if (m_audio_pos + n_samples > m_audio.size()) {
+
+                // If so we perform two memcpys 
+                // n0 is remainder from current pos to end of buffer.
                 const size_t n0 = m_audio.size() - m_audio_pos;
 
+                // Copy the stream from m_audio_pos to end of buff.
                 memcpy(&m_audio[m_audio_pos], stream, n0 * sizeof(float));
+                // Copy the stream from beginning to the remainder of the samples.
                 memcpy(&m_audio[0], stream + n0 * sizeof(float), (n_samples - n0) * sizeof(float));
             } else {
                 memcpy(&m_audio[m_audio_pos], stream, n_samples * sizeof(float));
             }
+            // Set new audio_pos, wrapping if needed.
             m_audio_pos = (m_audio_pos + n_samples) % m_audio.size();
+            // Set new capacity 
             m_audio_len = std::min(m_audio_len + n_samples, m_audio.size());
         }
     }

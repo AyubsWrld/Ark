@@ -6,66 +6,84 @@
 
 #include <atomic>
 #include <cstdint>
-#include <vector>
 #include <mutex>
+#include <vector>
 
 //
 // SDL Audio capture
 //
 
-namespace Ark 
+namespace Ark
 {
-    class FAudioAsyncDevice 
-    {
-    public:
-        FAudioAsyncDevice(int len_ms);
 
-        ~FAudioAsyncDevice();
+  // Device err handling ... (SDL SDL_GetNumAudioDevices)
+  enum class EAudioDeviceError
+  {
+    _max_
+  };
 
-        /**
-        * @brief Initializes the audio device backend
-        *
-        * @param Index of logical device used for capturing audio. 
-        *
-        * @return Whether initialization succeeded or not.
-        *
-        */
-        
-        [[nodiscard]] bool Init(int capture_id, int sample_rate);
+class FAudioAsyncDevice
+{
+  public:
+    FAudioAsyncDevice (int len_ms);
 
-        /**
-        * @brief Initializes the audio device backend using the "best-fit" logical device for capturing.
-        *
-        * @param Index of logical device used for capturing audio. 
-        *
-        * @return Whether initialization succeeded or not.
-        *
-        */
-        [[nodiscard]] bool Init(int sample_rate);
+    ~FAudioAsyncDevice ();
 
-        [[nodiscard]] bool Resume();
-        [[nodiscard]] bool Clear();
-        [[nodiscard]] bool Pause();
+    /**
+     * @brief Initializes the audio device backend
+     *
+     * @param Index of logical device used for capturing audio.
+     *
+     * @return Whether initialization succeeded or not.
+     *
+     */
 
-        void Callback(uint8_t * stream, int len);
+    [[nodiscard]] bool Init (int capture_id, int sample_rate);
 
-        void Get(int ms, std::vector<float> & audio);
-        
-        friend std::ostream& operator<<(std::ostream& o, const FAudioAsyncDevice& device);
+    /**
+     * @brief Initializes the audio device backend using the "best-fit" logical
+     * device for capturing.
+     *
+     * @param Index of logical device used for capturing audio.
+     *
+     * @return Whether initialization succeeded or not.
+     *
+     */
+    [[nodiscard]] bool Init (int sample_rate);
 
-    private:
-        SDL_AudioDeviceID m_dev_id_in = 0;
+    [[nodiscard]] bool Resume ();
+    [[nodiscard]] bool Clear ();
+    [[nodiscard]] bool Pause ();
 
-        int m_len_ms = 0;
-        int m_sample_rate = 0;
+    /**
+     * @brief Callback to be used to write captured samples into underlying
+     * internal buffer.
+     *
+     * @param Pointer to the start of the buffer containing the newly captured audio samples
+     *
+     * @param Size of the buffer (in bytes) of the buffer containing the newly captured audio samples
+     *
+     */
+    void Callback (uint8_t *stream, int len);
 
-        std::atomic_bool m_running;
-        std::mutex       m_mutex;
+    void Get (int ms, std::vector<float> &audio);
 
-        std::vector<float> m_audio;
-        size_t             m_audio_pos = 0;
-        size_t             m_audio_len = 0;
-    };
-    // Return false if need to quit
-    bool sdl_poll_events();
+    friend std::ostream &operator<< (std::ostream &o,
+                                     const FAudioAsyncDevice &device);
+
+  private:
+    SDL_AudioDeviceID m_dev_id_in = 0;
+
+    int m_len_ms = 0;
+    int m_sample_rate = 0;
+
+    std::atomic_bool m_running;
+    std::mutex m_mutex;
+
+    std::vector<float> m_audio;
+    size_t m_audio_pos = 0;
+    size_t m_audio_len = 0;
+};
+// Return false if need to quit
+bool sdl_poll_events ();
 }
