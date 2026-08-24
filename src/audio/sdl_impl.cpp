@@ -48,7 +48,7 @@ namespace Ark
         capture_spec_requested.channels = 1;
         capture_spec_requested.samples  = 1024;
         capture_spec_requested.callback = [](void * userdata, uint8_t * stream, int len) {
-            FAudioAsyncDevice * audio = (FAudioAsyncDevice*) userdata;
+            FAudioAsyncDevice* audio = (FAudioAsyncDevice*) userdata;
             audio->Callback(stream, len);
         };
         capture_spec_requested.userdata = this;

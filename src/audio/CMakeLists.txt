@@ -5,6 +5,9 @@ add_library(arkaudio)
 target_sources(arkaudio
     PRIVATE
         sdl_impl.cpp
+        AudioAsyncDevice.cpp
+        AudioDeviceManager.cpp
+        AudioDevice.cpp
 )
 
 target_include_directories(arkaudio
