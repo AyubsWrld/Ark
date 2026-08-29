@@ -9,6 +9,7 @@ namespace Ark
     enum class EAudioDeviceError 
     {
         Success,
+        OpenFailure,
         _max
     }; 
 

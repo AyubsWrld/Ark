@@ -1,32 +1,98 @@
 [
 {
-  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\edith.dir\\src\\main.cpp.obj.modmap -o CMakeFiles\\edith.dir\\src\\main.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\main.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/main.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir/src/main.cpp.obj"
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_ENABLE -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/Users/ayubmohamed/Desktop/Ark/include/utils -isystem /usr/local/include/SDL2 -isystem /usr/local/include -isystem /Users/ayubmohamed/.conan2/p/b/spdlo7800a273231bc/p/include -isystem /Users/ayubmohamed/.conan2/p/b/fmt85407191d4edd/p/include -isystem /Users/ayubmohamed/.conan2/p/b/tracyc7150174d1650/p/include/tracy -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/ark.dir/src/main.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/main.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/main.cpp",
+  "output": "CMakeFiles/ark.dir/src/main.cpp.o"
 },
 {
-  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\edith.dir\\src\\common-whisper.cpp.obj.modmap -o CMakeFiles\\edith.dir\\src\\common-whisper.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common-whisper.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/common-whisper.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir/src/common-whisper.cpp.obj"
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_ENABLE -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/Users/ayubmohamed/Desktop/Ark/include/utils -isystem /usr/local/include/SDL2 -isystem /usr/local/include -isystem /Users/ayubmohamed/.conan2/p/b/spdlo7800a273231bc/p/include -isystem /Users/ayubmohamed/.conan2/p/b/fmt85407191d4edd/p/include -isystem /Users/ayubmohamed/.conan2/p/b/tracyc7150174d1650/p/include/tracy -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/ark.dir/src/common-whisper.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/common-whisper.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/common-whisper.cpp",
+  "output": "CMakeFiles/ark.dir/src/common-whisper.cpp.o"
 },
 {
-  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\edith.dir\\src\\common.cpp.obj.modmap -o CMakeFiles\\edith.dir\\src\\common.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/common.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir/src/common.cpp.obj"
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_ENABLE -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/Users/ayubmohamed/Desktop/Ark/include/utils -isystem /usr/local/include/SDL2 -isystem /usr/local/include -isystem /Users/ayubmohamed/.conan2/p/b/spdlo7800a273231bc/p/include -isystem /Users/ayubmohamed/.conan2/p/b/fmt85407191d4edd/p/include -isystem /Users/ayubmohamed/.conan2/p/b/tracyc7150174d1650/p/include/tracy -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/ark.dir/src/common.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/common.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/common.cpp",
+  "output": "CMakeFiles/ark.dir/src/common.cpp.o"
 },
 {
-  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @CMakeFiles\\edith.dir\\src\\common-sdl.cpp.obj.modmap -o CMakeFiles\\edith.dir\\src\\common-sdl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\common-sdl.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/common-sdl.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/CMakeFiles/edith.dir/src/common-sdl.cpp.obj"
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_ENABLE -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/Users/ayubmohamed/Desktop/Ark/include/utils -isystem /usr/local/include/SDL2 -isystem /usr/local/include -isystem /Users/ayubmohamed/.conan2/p/b/spdlo7800a273231bc/p/include -isystem /Users/ayubmohamed/.conan2/p/b/fmt85407191d4edd/p/include -isystem /Users/ayubmohamed/.conan2/p/b/tracyc7150174d1650/p/include/tracy -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/ark.dir/src/common-sdl.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/common-sdl.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/common-sdl.cpp",
+  "output": "CMakeFiles/ark.dir/src/common-sdl.cpp.o"
 },
 {
-  "directory": "E:/msys2/home/0xtrensetta/Projects/edith/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/edith/include/asr -IE:/msys2/home/0xtrensetta/Projects/edith/include -isystem E:/msys2/clang64/include/SDL2 -std=gnu++23 @src\\asr\\CMakeFiles\\edasr.dir\\asr.cpp.obj.modmap -o src\\asr\\CMakeFiles\\edasr.dir\\asr.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\edith\\src\\asr\\asr.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/edith/src/asr/asr.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/edith/build/src/asr/CMakeFiles/edasr.dir/asr.cpp.obj"
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_ENABLE -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/Users/ayubmohamed/Desktop/Ark/include/utils -isystem /usr/local/include/SDL2 -isystem /usr/local/include -isystem /Users/ayubmohamed/.conan2/p/b/spdlo7800a273231bc/p/include -isystem /Users/ayubmohamed/.conan2/p/b/fmt85407191d4edd/p/include -isystem /Users/ayubmohamed/.conan2/p/b/tracyc7150174d1650/p/include/tracy -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/ark.dir/src/asr/asr.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/asr/asr.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/asr/asr.cpp",
+  "output": "CMakeFiles/ark.dir/src/asr/asr.cpp.o"
+},
+{
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_ENABLE -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/Users/ayubmohamed/Desktop/Ark/include/utils -isystem /usr/local/include/SDL2 -isystem /usr/local/include -isystem /Users/ayubmohamed/.conan2/p/b/spdlo7800a273231bc/p/include -isystem /Users/ayubmohamed/.conan2/p/b/fmt85407191d4edd/p/include -isystem /Users/ayubmohamed/.conan2/p/b/tracyc7150174d1650/p/include/tracy -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/ark.dir/src/audio/sdl_impl.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/audio/sdl_impl.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/audio/sdl_impl.cpp",
+  "output": "CMakeFiles/ark.dir/src/audio/sdl_impl.cpp.o"
+},
+{
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_ENABLE -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/Users/ayubmohamed/Desktop/Ark/include/utils -isystem /usr/local/include/SDL2 -isystem /usr/local/include -isystem /Users/ayubmohamed/.conan2/p/b/spdlo7800a273231bc/p/include -isystem /Users/ayubmohamed/.conan2/p/b/fmt85407191d4edd/p/include -isystem /Users/ayubmohamed/.conan2/p/b/tracyc7150174d1650/p/include/tracy -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/ark.dir/src/audio/AudioAsyncDevice.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/audio/AudioAsyncDevice.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/audio/AudioAsyncDevice.cpp",
+  "output": "CMakeFiles/ark.dir/src/audio/AudioAsyncDevice.cpp.o"
+},
+{
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_ENABLE -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/Users/ayubmohamed/Desktop/Ark/include/utils -isystem /usr/local/include/SDL2 -isystem /usr/local/include -isystem /Users/ayubmohamed/.conan2/p/b/spdlo7800a273231bc/p/include -isystem /Users/ayubmohamed/.conan2/p/b/fmt85407191d4edd/p/include -isystem /Users/ayubmohamed/.conan2/p/b/tracyc7150174d1650/p/include/tracy -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/ark.dir/src/audio/AudioDeviceManager.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/audio/AudioDeviceManager.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/audio/AudioDeviceManager.cpp",
+  "output": "CMakeFiles/ark.dir/src/audio/AudioDeviceManager.cpp.o"
+},
+{
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_ENABLE -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/Users/ayubmohamed/Desktop/Ark/include/utils -isystem /usr/local/include/SDL2 -isystem /usr/local/include -isystem /Users/ayubmohamed/.conan2/p/b/spdlo7800a273231bc/p/include -isystem /Users/ayubmohamed/.conan2/p/b/fmt85407191d4edd/p/include -isystem /Users/ayubmohamed/.conan2/p/b/tracyc7150174d1650/p/include/tracy -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/ark.dir/src/audio/AudioDevice.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/audio/AudioDevice.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/audio/AudioDevice.cpp",
+  "output": "CMakeFiles/ark.dir/src/audio/AudioDevice.cpp.o"
+},
+{
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_ENABLE -I/Users/ayubmohamed/Desktop/Ark/include -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/SDLWrapper -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/Users/ayubmohamed/Desktop/Ark/include/utils -isystem /usr/local/include/SDL2 -isystem /usr/local/include -isystem /Users/ayubmohamed/.conan2/p/b/spdlo7800a273231bc/p/include -isystem /Users/ayubmohamed/.conan2/p/b/fmt85407191d4edd/p/include -isystem /Users/ayubmohamed/.conan2/p/b/tracyc7150174d1650/p/include/tracy -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/ark.dir/src/utils/PlatformMisc.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/utils/PlatformMisc.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/utils/PlatformMisc.cpp",
+  "output": "CMakeFiles/ark.dir/src/utils/PlatformMisc.cpp.o"
+},
+{
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build/src/asr",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/ayubmohamed/Desktop/Ark/include/asr -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/Users/ayubmohamed/Desktop/Ark/include/common -I/usr/local/include -I/usr/local/include/SDL2 -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/arkasr.dir/asr.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/asr/asr.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/asr/asr.cpp",
+  "output": "src/asr/CMakeFiles/arkasr.dir/asr.cpp.o"
+},
+{
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build/src/utils",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/ayubmohamed/Desktop/Ark/include/utils -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/arkutils.dir/PlatformMisc.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/utils/PlatformMisc.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/utils/PlatformMisc.cpp",
+  "output": "src/utils/CMakeFiles/arkutils.dir/PlatformMisc.cpp.o"
+},
+{
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build/src/audio",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/usr/local/include -I/usr/local/include/SDL2 -isystem /Users/ayubmohamed/.conan2/p/b/spdlo7800a273231bc/p/include -isystem /Users/ayubmohamed/.conan2/p/b/fmt85407191d4edd/p/include -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/arkaudio.dir/sdl_impl.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/audio/sdl_impl.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/audio/sdl_impl.cpp",
+  "output": "src/audio/CMakeFiles/arkaudio.dir/sdl_impl.cpp.o"
+},
+{
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build/src/audio",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/usr/local/include -I/usr/local/include/SDL2 -isystem /Users/ayubmohamed/.conan2/p/b/spdlo7800a273231bc/p/include -isystem /Users/ayubmohamed/.conan2/p/b/fmt85407191d4edd/p/include -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/arkaudio.dir/AudioAsyncDevice.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/audio/AudioAsyncDevice.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/audio/AudioAsyncDevice.cpp",
+  "output": "src/audio/CMakeFiles/arkaudio.dir/AudioAsyncDevice.cpp.o"
+},
+{
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build/src/audio",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/usr/local/include -I/usr/local/include/SDL2 -isystem /Users/ayubmohamed/.conan2/p/b/spdlo7800a273231bc/p/include -isystem /Users/ayubmohamed/.conan2/p/b/fmt85407191d4edd/p/include -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/arkaudio.dir/AudioDeviceManager.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/audio/AudioDeviceManager.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/audio/AudioDeviceManager.cpp",
+  "output": "src/audio/CMakeFiles/arkaudio.dir/AudioDeviceManager.cpp.o"
+},
+{
+  "directory": "/Users/ayubmohamed/Desktop/Ark/build/src/audio",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -I/Users/ayubmohamed/Desktop/Ark/include/audio -I/usr/local/include -I/usr/local/include/SDL2 -isystem /Users/ayubmohamed/.conan2/p/b/spdlo7800a273231bc/p/include -isystem /Users/ayubmohamed/.conan2/p/b/fmt85407191d4edd/p/include -m64 -stdlib=libc++ -O3 -DNDEBUG -std=gnu++2b -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -o CMakeFiles/arkaudio.dir/AudioDevice.cpp.o -c /Users/ayubmohamed/Desktop/Ark/src/audio/AudioDevice.cpp",
+  "file": "/Users/ayubmohamed/Desktop/Ark/src/audio/AudioDevice.cpp",
+  "output": "src/audio/CMakeFiles/arkaudio.dir/AudioDevice.cpp.o"
 }
 ]

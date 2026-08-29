@@ -10,6 +10,7 @@
 #include "whisper.h"
 
 #include "AudioDeviceManager.hpp"
+#include "AudioAsyncDevice.hpp"
 
 //  typedef void (SDLCALL * SDL_AudioCallback) (void *userdata, Uint8 * stream,
 //  int len);
@@ -126,5 +127,7 @@ int main (int argc, char **argv)
     deviceManager.EnumerateOutputDevices();
     */
 
+    Ark::UAudioAsyncDevice<float> device; 
+    device.Init();
     return EXIT_SUCCESS;
 }

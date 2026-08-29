@@ -7,7 +7,7 @@
 #include <cstdint>
 #include <memory>
 #include <spdlog/spdlog.h>
-#include <tracy/Tracy.hpp>
+//#include <tracy/Tracy.hpp>
 
 // TODO: remove just for protyping
 struct FAudioDevice
