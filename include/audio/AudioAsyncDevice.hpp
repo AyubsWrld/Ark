@@ -27,11 +27,11 @@ namespace Ark
 
         std::span<T> Get() const noexcept;
 
-        EAudioDeviceError Clear()    noexcept;
-        EAudioDeviceError Pause()    noexcept;
-        EAudioDeviceError Resume()   noexcept;
-        EAudioDeviceError Init();
-        FAudioDeviceInfo  GetInfo() const noexcept;
+        [[nodiscard]] EAudioDeviceError Clear()    noexcept;
+        [[nodiscard]] EAudioDeviceError EAudioDeviceError Pause()    noexcept;
+        [[nodiscard]] EAudioDeviceError EAudioDeviceError Resume()   noexcept;
+        [[nodiscard]] EAudioDeviceError EAudioDeviceError Init();
+        [[nodiscard]] EAudioDeviceError FAudioDeviceInfo  GetInfo() const noexcept;
 
     };
 }
