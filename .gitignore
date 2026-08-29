@@ -1,3 +1,4 @@
 build/
 models/
 models/*.bin
+build/build.ninja build/cmake_install.cmake build/CMakeCache.txt build/cmakedeps_macros.cmake build/CMakeFiles build/CMakePresets.json build/compile_commands.json build/conan_toolchain.cmake build/conanbuild.bat build/conanbuildenv-release-x86_64.bat build/conandeps_legacy.cmake build/conanrun.bat build/conanrunenv-release-x86_64.bat build/deactivate_conanbuild.bat build/deactivate_conanrun.bat build/fmt-config.cmake build/fmt-config-version.cmake build/fmt-release-x86_64-data.cmake build/fmt-Target-release.cmake build/fmtTargets.cmake build/spdlog-config.cmake build/spdlog-config-version.cmake build/spdlog-release-x86_64-data.cmake build/spdlog-Target-release.cmake build/spdlogTargets.cmake build/src build/TracyConfig.cmake build/TracyConfigVersion.cmake build/Tracy-release-x86_64-data.cmake build/Tracy-Target-release.cmake build/TracyTargets.cmake

@@ -9,6 +9,7 @@
 #include "asr.hpp"
 #include "whisper.h"
 
+#include "AudioDeviceManager.hpp"
 
 //  typedef void (SDLCALL * SDL_AudioCallback) (void *userdata, Uint8 * stream,
 //  int len);
@@ -22,13 +23,6 @@ enum
   CAPTURE_TIME_MS = 3000
 };
 
-struct FAudioDevice
-{
-  void cb(uint8_t* stream, int len)
-  {
-    std::cout << "Captured " << len << " samples\n";
-  }
-};
 
 static FAudioDevice dev; 
 static SDL_AudioDeviceID m_id;
@@ -117,15 +111,20 @@ void callback (std::byte *stream, int len)
 
 int main (int argc, char **argv)
 {
-    // Ark::ASREntry(argc, argv);
+    if (false) 
+    {
+        SDL_setup(0, WHISPER_SAMPLE_RATE);
+        Resume();
+        SDL_CloseAudioDevice(m_id);
+        SDL_Quit();
+        Ark::ASREntry(argc, argv);
+    }
 
-  if (false) 
-  {
-    SDL_setup(0, WHISPER_SAMPLE_RATE);
-    Resume();
-    SDL_CloseAudioDevice(m_id);
-    SDL_Quit();
-  }
-  Ark::ASREntry(argc, argv);
-  return EXIT_SUCCESS;
+    /*
+    Ark::UAudioDeviceManager<FAudioDevice> deviceManager; 
+    deviceManager.EnumerateCaptureDevices();
+    deviceManager.EnumerateOutputDevices();
+    */
+
+    return EXIT_SUCCESS;
 }

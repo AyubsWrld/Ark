@@ -3,7 +3,7 @@ find_package(SDL2 REQUIRED)
 add_library(arkaudio)
 
 target_sources(arkaudio
-    PRIVATE
+    PUBLIC
         sdl_impl.cpp
         AudioAsyncDevice.cpp
         AudioDeviceManager.cpp

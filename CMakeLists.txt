@@ -17,7 +17,11 @@ set(
     "Path to whisper.cpp SDK"
 )
 
+find_package(spdlog REQUIRED)
+find_package(Tracy REQUIRED)
+find_package(SDL2 REQUIRED)
 find_package(whisper REQUIRED)
+find_package(GGML REQUIRED)
 
 add_executable(${CMAKE_PROJECT_NAME})
 target_sources(${CMAKE_PROJECT_NAME}
@@ -34,8 +38,6 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/src/utils)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/audio)
 
 
-find_package(SDL2 REQUIRED)
-find_package(GGML REQUIRED)
 
 find_path(
     WHISPER_INCLUDE_DIR
@@ -70,6 +72,7 @@ target_include_directories(
         "${CMAKE_SOURCE_DIR}/include/SDLWrapper"
         ${SDL2_INCLUDE_DIR}
         ${WHISPER_INCLUDE_DIR}
+        ${spdlog_INCLUDE_DIRS}
 )
 
 target_link_libraries(
@@ -78,11 +81,18 @@ target_link_libraries(
         ${SDL2_LIBRARIES}
         ${WHISPER_LIBRARIES}
         ${GGML_LIBRARIES}
+        spdlog::spdlog
+        Tracy::TracyClient
         whisper
         arkasr
         arkaudio
         arkutils
         #arkcommon
+)
+
+target_compile_definitions(${CMAKE_PROJECT_NAME}
+    PRIVATE 
+    TRACY_ENABLE
 )
 
 

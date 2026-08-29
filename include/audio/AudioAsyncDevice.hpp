@@ -1,15 +1,37 @@
 #pragma once
-#include <concepts>
 
-template<typename T> 
-concept IAudioDevice = requires(T audio_device)
+#include "AudioDevice.hpp"
+
+#include <cstdint>
+#include <vector>
+
+namespace Ark 
 {
-  audio_device.Init();      // Initializes device. 
-  audio_device.Pause();     // Pauses capturing. 
-  audio_device.Resume();    // Resume capturing. 
-  audio_device.Clear();     // Clears underlying buffer.
-  audio_device.Get();       // Retrieves an underlying buffer.
-  audio_device.Callback();  // Callback to run everytime audio is sampled.
-  audio_device.m_dev_id_in; // DeviceID
-};
+    template<typename T>
+    class UAudioAsyncDevice 
+    {
+        std::uint32_t   mId; 
+        std::uint32_t   SampleRate;
+        std::vector<T>  mBuffer;
 
+    public:
+
+        UAudioAsyncDevice();
+        ~UAudioAsyncDevice();
+
+        UAudioAsyncDevice(UAudioAsyncDevice&) = delete;
+        UAudioAsyncDevice(UAudioAsyncDevice&&);
+
+        UAudioAsyncDevice& operator=(UAudioAsyncDevice&) = delete;
+        UAudioAsyncDevice& operator=(UAudioAsyncDevice&&);
+
+        std::span<T> Get() const noexcept;
+
+        EAudioDeviceError Clear()    noexcept;
+        EAudioDeviceError Pause()    noexcept;
+        EAudioDeviceError Resume()   noexcept;
+        EAudioDeviceError Init();
+        FAudioDeviceInfo  GetInfo() const noexcept;
+
+    };
+}
