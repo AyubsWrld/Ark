@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd build && cmake .. && make && cd .. && ./build/ark
+cd build && cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake && ninja && cd .. && ./build/ark
 

@@ -16,14 +16,19 @@ struct FAudioDevice
     {
         // std::cout << "Captured " << len << " samples\n";
     }
-
     std::size_t m_id;
+
+    std::vector<uint8_t> mBuffer;
+    std::size_t mId;
+    int mState;
+    int SampleRate;
 
     void Clear () { return; }
     void Pause () { return; }
     void Resume () { return; }
-    void PrintInfo () { return; }
+    void GetInfo () { return; }
     void Get () { return; }
+    void PrintInfo () { return; }
 };
 
 namespace Ark
@@ -102,7 +107,9 @@ namespace Ark
         if (const std::int32_t nDevices = SDL_GetNumAudioDevices (OUTPUT);
             nDevices != SDL_ERROR)
         {
-            spdlog::info ("Found {} Devices", nDevices);
+            for (std::size_t i{}; i < nDevices; i++)
+                spdlog::info ("Found {}",
+                              SDL_GetAudioDeviceName (0, SDL_TRUE));
         }
         return;
     }

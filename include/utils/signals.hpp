@@ -112,26 +112,26 @@ __inline__ static void trap_instruction(void)
 #error "debugbreak.h is not supported on this target"
 #elif DEBUG_BREAK_IMPL == DEBUG_BREAK_USE_TRAP_INSTRUCTION
 __attribute__((always_inline))
-__inline__ static void debug_break(void)
+__inline__ static void __debug_break(void)  
 {
 	trap_instruction();
 }
 #elif DEBUG_BREAK_IMPL == DEBUG_BREAK_USE_BULTIN_DEBUGTRAP
 __attribute__((always_inline))
-__inline__ static void debug_break(void)
+__inline__ static void __debug_break(void)
 {
 	__builtin_debugtrap();
 }
 #elif DEBUG_BREAK_IMPL == DEBUG_BREAK_USE_BULTIN_TRAP
 __attribute__((always_inline))
-__inline__ static void debug_break(void)
+__inline__ static void __debug_break(void)
 {
 	__builtin_trap();
 }
 #elif DEBUG_BREAK_IMPL == DEBUG_BREAK_USE_SIGTRAP
 #include <signal.h>
 __attribute__((always_inline))
-__inline__ static void debug_break(void)
+__inline__ static void __debug_break(void)
 {
 	raise(SIGTRAP);
 }
@@ -139,9 +139,13 @@ __inline__ static void debug_break(void)
 #error "invalid DEBUG_BREAK_IMPL value"
 #endif
 
+#define ARK_DEBUG_BREAK()               \
+    do {                                \
+        __debug_break()                 \
+    } while(false)
+
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* ifdef _MSC_VER */
-

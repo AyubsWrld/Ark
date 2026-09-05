@@ -11,12 +11,12 @@
 
 #include "AudioDeviceManager.hpp"
 #include "AudioAsyncDevice.hpp"
-
-//  typedef void (SDLCALL * SDL_AudioCallback) (void *userdata, Uint8 * stream,
-//  int len);
-
+#include "AudioVisualizer.hpp"
 
 #include <SDL2/SDL.h>
+#include <SDL_audio.h>
+#include <SDL_stdinc.h>
+#include <cstdlib>
 #include <iostream>
 
 enum
@@ -110,24 +110,48 @@ void callback (std::byte *stream, int len)
   std::cout << "Captured " << len << " samples";
 }
 
+class Graph 
+{
+ public:
+
+    std::vector<int> operator()(int width, int height) const 
+    {
+        std::vector<int> output(width);
+        for (int i = 0; i < width; ++i) 
+        {
+            float v = 0;
+            v += 0.1f * sin((i + shift) * 0.1f);        // NOLINT
+            v += 0.2f * sin((i + shift + 10) * 0.15f);  // NOLINT
+            v += 0.1f * sin((i + shift) * 0.03f);       // NOLINT
+            v *= height;                                // NOLINT
+            v += 0.5f * height;                         // NOLINT
+            output[i] = static_cast<int>(v);
+        }
+        return output;
+    }
+    int shift = 0;
+};
+
+std::vector<int> triangle(int width, int height) {
+  std::vector<int> output(width);
+  for (int i = 0; i < width; ++i) {
+    output[i] = i % (height - 4) + 2;
+  }
+  return output;
+}
+
 int main (int argc, char **argv)
 {
-    if (false) 
+    // Stub to remove, only for prototyping ...
+    //Ark::FAudioVisualizer<void>{}.Draw();
+  
+    using namespace Ark;
+    //UAudioDeviceManager<UAudioAsyncDevice<float>> Manager;
+    UAudioAsyncDevice<float> Device; 
+    Device.Init();
+    Device.Play();
+    for(;;)
     {
-        SDL_setup(0, WHISPER_SAMPLE_RATE);
-        Resume();
-        SDL_CloseAudioDevice(m_id);
-        SDL_Quit();
-        Ark::ASREntry(argc, argv);
     }
-
-    /*
-    Ark::UAudioDeviceManager<FAudioDevice> deviceManager; 
-    deviceManager.EnumerateCaptureDevices();
-    deviceManager.EnumerateOutputDevices();
-    */
-
-    Ark::UAudioAsyncDevice<float> device; 
-    device.Init();
-    return EXIT_SUCCESS;
+    return EXIT_FAILURE;
 }

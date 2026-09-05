@@ -18,6 +18,7 @@ set(
 )
 
 find_package(spdlog REQUIRED)
+find_package(ftxui REQUIRED)
 find_package(Tracy REQUIRED)
 find_package(SDL2 REQUIRED)
 find_package(whisper REQUIRED)
@@ -81,6 +82,9 @@ target_link_libraries(
         ${SDL2_LIBRARIES}
         ${WHISPER_LIBRARIES}
         ${GGML_LIBRARIES}
+        ftxui::screen
+        ftxui::dom
+        ftxui::component
         spdlog::spdlog
         Tracy::TracyClient
         whisper

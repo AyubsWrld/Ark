@@ -9,6 +9,7 @@ class ArkConan(ConanFile):
         self.requires("fmt/12.0.0", override=True)
         self.requires("spdlog/1.15.3")
         self.requires("tracy/0.13.1")
+        self.requires("ftxui/7.0.3")
 
     def layout(self):
         pass
