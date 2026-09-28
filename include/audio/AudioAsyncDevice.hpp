@@ -1,12 +1,15 @@
 #pragma once
 
 #include "AudioDevice.hpp"
+#include "RingBuffer.hpp"
 
 #include <cstdint>
 #include <vector>
 
 namespace Ark 
 {
+    enum { BufferSize = 4 << 20 };
+
     template<typename T>
     class UAudioAsyncDevice 
     {
@@ -16,7 +19,7 @@ namespace Ark
         FAudioDeviceInfo    mDeviceInfo;
         std::uint32_t       mId; 
         std::uint32_t       SampleRate;
-        std::vector<T>      mBuffer;
+        TRingBuffer<T, 4096>      mBuffer; // 1kb ~ 8kb buffer.
 
     public:
 

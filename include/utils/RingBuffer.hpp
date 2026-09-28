@@ -1,462 +1,489 @@
+/**
+ * @file RingBuffer.h
+ * @brief Lock-free single-producer/single-consumer ring buffer.
+ *
+ * Provides a fixed-capacity SPSC ring buffer with no wasted slots. The API and
+ * identifiers follow Unreal Engine C++ naming conventions while retaining the
+ * original implementation's standard-library atomics and memory-ordering
+ * semantics.
+ *
+ * @note BufferSize must be a non-zero power of two.
+ * @note T must be a trivial type.
+ * @note This container is intended for exactly one producer and one consumer.
+ *
+ * @author Jan Oleksiewicz <jnk0le@hotmail.com>
+ * @version 2.0.5
+ * @date 22 Jun 2017
+ * @copyright SPDX-License-Identifier: MIT
+ */
+
 #pragma once
 
-#include <stdint.h>
-#include <stddef.h>
+#include <cstdint>
+#include <iostream>
+#include <cstddef>
 #include <limits>
 #include <atomic>
 #include <type_traits>
 
-namespace jnk0le
+namespace Ark
 {
-	/*!
-	 * \brief Lock free, with no wasted slots ringbuffer implementation
-	 *
-	 * \tparam T Type of buffered elements
-	 * \tparam buffer_size Size of the buffer. Must be a power of 2.
-	 * \tparam fake_tso Omit generation of explicit barrier code to avoid unnecesary instructions in tso scenario (e.g. simple microcontrollers/single core)
-	 * \tparam cacheline_size Size of the cache line, to insert appropriate padding in between indexes and buffer
-	 * \tparam index_t Type of array indexing type. Serves also as placeholder for future implementations.
-	 */
-	template<typename T, size_t buffer_size = 16, bool fake_tso = false, size_t cacheline_size = 0, typename index_t = size_t>
-	class Ringbuffer
+	/**
+     * @brief Lock-free single-producer/single-consumer ring buffer.
+     * The ring buffer uses monotonically increasing producer and consumer
+     *
+     * indices and masks them into the fixed-size backing array. BufferSize must
+     * be a power of two.
+     *
+     * @tparam T Element type stored by the buffer. Must be trivial.
+     * @tparam BufferSize Number of elements in the buffer. Must be a power of two.
+     * @tparam bFakeTSO When true, explicit acquire/release ordering on indices is
+     *         relaxed for environments where the required ordering is guaranteed.
+     * @tparam CacheLineSize Cache-line alignment used to separate indices and storage.
+     * @tparam IndexType Unsigned integral type used for producer/consumer indices.
+     */
+    template<typename T, size_t BufferSize = 16, bool bFakeTSO = false, size_t CacheLineSize = 0, typename IndexType = size_t>
+	class TRingBuffer
 	{
 	public:
-		/*!
-		 * \brief Default constructor, will initialize head and tail indexes
+		/**
+		 * @brief Default constructor, will initialize Head and Tail indexes
 		 */
-		Ringbuffer() : head(0), tail(0) {}
+		TRingBuffer() : Head(0), Tail(0) {}
 
-		/*!
-		 * \brief Special case constructor to premature out unnecessary initialization code when object is
+		/**
+		 * @brief Special case constructor to premature out unnecessary initialization code when object is
 		 * instantiated in .bss section
-		 * \warning If object is instantiated on stack, heap or inside noinit section then the contents have to be
+		 * @warning If object is instantiated on stack, heap or inside noinit section then the contents have to be
 		 * explicitly cleared before use
-		 * \param dummy Ignored
+		 * @param Dummy Ignored
 		 */
-		Ringbuffer(int dummy) { (void)(dummy); }
+		TRingBuffer(int Dummy) { (void)(Dummy); }
 
-		/*!
-		 * \brief Clear buffer from producer side
-		 * \warning function may return without performing any action if consumer tries to read data at the same time
+		/**
+		 * @brief Clear buffer from producer side
+		 * @warning function may return without performing any action if consumer tries to read Data At the same time
 		 */
-		void producerClear(void) {
-			// head modification will lead to underflow if cleared during consumer read
+		void ProducerClear(void) {
+			// Head modification will lead to underflow if cleared during consumer read
 			// doing this properly with CAS is not possible without modifying the consumer code
-			consumerClear();
+			ConsumerClear();
 		}
 
-		/*!
-		 * \brief Clear buffer from consumer side
+		/**
+		 * @brief Clear buffer from consumer side
 		 */
-		void consumerClear(void) {
-			tail.store(head.load(std::memory_order_relaxed), std::memory_order_relaxed);
+		void ConsumerClear(void) {
+			Tail.store(Head.load(std::memory_order_relaxed), std::memory_order_relaxed);
 		}
 
-		/*!
-		 * \brief Check if buffer is empty
-		 * \return True if buffer is empty
+		/**
+		 * @brief Check if buffer is empty
+		 * @return True if buffer is empty
 		 */
-		bool isEmpty(void) const {
-			return readAvailable() == 0;
+		bool IsEmpty(void) const {
+			return ReadAvailable() == 0;
 		}
 
-		/*!
-		 * \brief Check if buffer is full
-		 * \return True if buffer is full
+		/**
+		 * @brief Check if buffer is full
+		 * @return True if buffer is full
 		 */
-		bool isFull(void) const {
-			return writeAvailable() == 0;
+		bool IsFull(void) const {
+			return WriteAvailable() == 0;
 		}
 
-		/*!
-		 * \brief Check how many elements can be read from the buffer
-		 * \return Number of elements that can be read
+		/**
+		 * @brief Check how many elements can be read from the buffer
+		 * @return Number of elements that can be read
 		 */
-		index_t readAvailable(void) const {
-			return head.load(index_acquire_barrier) - tail.load(std::memory_order_relaxed);
+		IndexType ReadAvailable(void) const {
+			return Head.load(IndexAcquireBarrier) - Tail.load(std::memory_order_relaxed);
 		}
 
-		/*!
-		 * \brief Check how many elements can be written into the buffer
-		 * \return Number of free slots that can be be written
+		/**
+		 * @brief Check how many elements can be Written into the buffer
+		 * @return Number of free slots that can be be Written
 		 */
-		index_t writeAvailable(void) const {
-			return buffer_size - (head.load(std::memory_order_relaxed) - tail.load(index_acquire_barrier));
+		IndexType WriteAvailable(void) const {
+			return BufferSize - (Head.load(std::memory_order_relaxed) - Tail.load(IndexAcquireBarrier));
 		}
 
-		/*!
-		 * \brief Inserts data into internal buffer, without blocking
-		 * \param data element to be inserted into internal buffer
-		 * \return True if data was inserted
+		/**
+		 * @brief Inserts Data into internal buffer, without blocking
+		 * @param Data element to be inserted into internal buffer
+		 * @return True if Data was inserted
 		 */
-		bool insert(T data)
+		bool Insert(T Data)
 		{
-			index_t tmp_head = head.load(std::memory_order_relaxed);
+			IndexType TemporaryHead = Head.load(std::memory_order_relaxed);
 
-			if((tmp_head - tail.load(index_acquire_barrier)) == buffer_size)
+			if((TemporaryHead - Tail.load(IndexAcquireBarrier)) == BufferSize)
 				return false;
 			else
 			{
-				data_buff[tmp_head++ & buffer_mask] = data;
+				DataBuffer[TemporaryHead++ & BufferMask] = Data;
 				std::atomic_signal_fence(std::memory_order_release);
-				head.store(tmp_head, index_release_barrier);
+				Head.store(TemporaryHead, IndexReleaseBarrier);
 			}
 			return true;
 		}
 
-		/*!
-		 * \brief Inserts data into internal buffer, without blocking
-		 * \param[in] data Pointer to memory location where element, to be inserted into internal buffer, is located
-		 * \return True if data was inserted
+		/**
+		 * @brief Inserts Data into internal buffer, without blocking
+		 * @param[in] Data Pointer to memory location where element, to be inserted into internal buffer, is located
+		 * @return True if Data was inserted
 		 */
-		bool insert(const T* data)
+		bool Insert(const T* Data)
 		{
-			index_t tmp_head = head.load(std::memory_order_relaxed);
+			IndexType TemporaryHead = Head.load(std::memory_order_relaxed);
 
-			if((tmp_head - tail.load(index_acquire_barrier)) == buffer_size)
+			if((TemporaryHead - Tail.load(IndexAcquireBarrier)) == BufferSize)
 				return false;
 			else
 			{
-				data_buff[tmp_head++ & buffer_mask] = *data;
+				DataBuffer[TemporaryHead++ & BufferMask] = *Data;
 				std::atomic_signal_fence(std::memory_order_release);
-				head.store(tmp_head, index_release_barrier);
+				Head.store(TemporaryHead, IndexReleaseBarrier);
 			}
 			return true;
 		}
 
-		/*!
-		 * \brief Inserts data returned by callback function, into internal buffer, without blocking
+		/**
+		 * @brief Inserts Data returned by callback function, into internal buffer, without blocking
 		 *
 		 * This is a special purpose function that can be used to avoid redundant availability checks in case when
-		 * acquiring data have a side effects (like clearing status flags by reading a peripheral data register)
+		 * acquiring Data have a side effects (like clearing status flags by reading a peripheral Data register)
 		 *
-		 * \param get_data_callback Pointer to callback function that returns element to be inserted into buffer
-		 * \return True if data was inserted and callback called
+		 * @param GetDataCallback Pointer to callback function that returns element to be inserted into buffer
+		 * @return True if Data was inserted and callback called
 		 */
-		bool insertFromCallbackWhenAvailable(T (*get_data_callback)(void))
+		bool InsertFromCallbackWhenAvailable(T (*GetDataCallback)(void))
 		{
-			index_t tmp_head = head.load(std::memory_order_relaxed);
+			IndexType TemporaryHead = Head.load(std::memory_order_relaxed);
 
-			if((tmp_head - tail.load(index_acquire_barrier)) == buffer_size)
+			if((TemporaryHead - Tail.load(IndexAcquireBarrier)) == BufferSize)
 				return false;
 			else
 			{
 				//execute callback only when there is space in buffer
-				data_buff[tmp_head++ & buffer_mask] = get_data_callback();
+				DataBuffer[TemporaryHead++ & BufferMask] = GetDataCallback();
 				std::atomic_signal_fence(std::memory_order_release);
-				head.store(tmp_head, index_release_barrier);
+				Head.store(TemporaryHead, IndexReleaseBarrier);
 			}
 			return true;
 		}
 
-		/*!
-		 * \brief Removes single element without reading
-		 * \return True if one element was removed
+		/**
+		 * @brief Removes single element without reading
+		 * @return True if one element was removed
 		 */
-		bool remove()
+		bool Remove()
 		{
-			index_t tmp_tail = tail.load(std::memory_order_relaxed);
+			IndexType TemporaryTail = Tail.load(std::memory_order_relaxed);
 
-			if(tmp_tail == head.load(std::memory_order_relaxed))
-				return false;
+			if (TemporaryTail == Head.load(std::memory_order_relaxed))
+				{
+					return false;
+				}
 			else
-				tail.store(++tmp_tail, index_release_barrier); // release in case data was loaded/used before
+				Tail.store(++TemporaryTail, IndexReleaseBarrier); // release in case Data was loaded/used before
 
 			return true;
 		}
 
-		/*!
-		 * \brief Removes multiple elements without reading and storing it elsewhere
-		 * \param cnt Maximum number of elements to remove
-		 * \return Number of removed elements
+		/**
+		 * @brief Removes multiple elements without reading and storing it elsewhere
+		 * @param Count Maximum number of elements to Remove
+		 * @return Number of removed elements
 		 */
-		size_t remove(size_t cnt) {
-			index_t tmp_tail = tail.load(std::memory_order_relaxed);
-			index_t avail = head.load(std::memory_order_relaxed) - tmp_tail;
+		size_t Remove(size_t Count) {
+			IndexType TemporaryTail = Tail.load(std::memory_order_relaxed);
+			IndexType avail = Head.load(std::memory_order_relaxed) - TemporaryTail;
 
-			cnt = (cnt > avail) ? avail : cnt;
+			Count = (Count > avail) ? avail : Count;
 
-			tail.store(tmp_tail + cnt, index_release_barrier);
-			return cnt;
+			Tail.store(TemporaryTail + Count, IndexReleaseBarrier);
+			return Count;
 		}
 
-		/*!
-		 * \brief Reads one element from internal buffer without blocking
-		 * \param[out] data Reference to memory location where removed element will be stored
-		 * \return True if data was fetched from the internal buffer
+		/**
+		 * @brief Reads one element from internal buffer without blocking
+		 * @param[out] Data Reference to memory location where removed element will be stored
+		 * @return True if Data was fetched from the internal buffer
 		 */
-		bool remove(T& data) {
-			return remove(&data); // references are anyway implemented as pointers
+		bool Remove(T& Data) {
+			return Remove(&Data); // references are anyway implemented as pointers
 		}
 
-		/*!
-		 * \brief Reads one element from internal buffer without blocking
-		 * \param[out] data Pointer to memory location where removed element will be stored
-		 * \return True if data was fetched from the internal buffer
+		/**
+		 * @brief Reads one element from internal buffer without blocking
+		 * @param[out] Data Pointer to memory location where removed element will be stored
+		 * @return True if Data was fetched from the internal buffer
 		 */
-		bool remove(T* data) {
-			index_t tmp_tail = tail.load(std::memory_order_relaxed);
+		bool Remove(T* Data) {
+			IndexType TemporaryTail = Tail.load(std::memory_order_relaxed);
 
-			if(tmp_tail == head.load(index_acquire_barrier))
+			if(TemporaryTail == Head.load(IndexAcquireBarrier))
 				return false;
 			else
 			{
-				*data = data_buff[tmp_tail++ & buffer_mask];
+				*Data = DataBuffer[TemporaryTail++ & BufferMask];
 				std::atomic_signal_fence(std::memory_order_release);
-				tail.store(tmp_tail, index_release_barrier);
+				Tail.store(TemporaryTail, IndexReleaseBarrier);
 			}
 			return true;
 		}
 
-		/*!
-		 * \brief Gets the first element in the buffer on consumed side
+		/**
+		 * @brief Gets the first element in the buffer on consumed side
 		 *
 		 * It is safe to use and modify item contents only on consumer side
 		 *
-		 * \return Pointer to first element, nullptr if buffer was empty
+		 * @return Pointer to first element, nullptr if buffer was empty
 		 */
-		T* peek() {
-			index_t tmp_tail = tail.load(std::memory_order_relaxed);
+		T* Peek() {
+			IndexType TemporaryTail = Tail.load(std::memory_order_relaxed);
 
-			if(tmp_tail == head.load(index_acquire_barrier))
+			if(TemporaryTail == Head.load(IndexAcquireBarrier))
 				return nullptr;
 			else
-				return &data_buff[tmp_tail & buffer_mask];
+				return &DataBuffer[TemporaryTail & BufferMask];
 		}
 
-		/*!
-		 * \brief Gets the n'th element on consumed side
+		/**
+		 * @brief Gets the n'th element on consumed side
 		 *
 		 * It is safe to use and modify item contents only on consumer side
 		 *
-		 * \param index Item offset starting on the consumed side
-		 * \return Pointer to requested element, nullptr if index exceeds storage count
+		 * @param Index Item offset starting on the consumed side
+		 * @return Pointer to requested element, nullptr if Index exceeds storage Count
 		 */
-		T* at(size_t index) {
-			index_t tmp_tail = tail.load(std::memory_order_relaxed);
+		T* At(size_t Index) {
+			IndexType TemporaryTail = Tail.load(std::memory_order_relaxed);
 
-			if((head.load(index_acquire_barrier) - tmp_tail) <= index)
+			if((Head.load(IndexAcquireBarrier) - TemporaryTail) <= Index)
 				return nullptr;
 			else
-				return &data_buff[(tmp_tail + index) & buffer_mask];
+				return &DataBuffer[(TemporaryTail + Index) & BufferMask];
 		}
 
-		/*!
-		 * \brief Gets the n'th element on consumed side
+		/**
+		 * @brief Gets the n'th element on consumed side
 		 *
 		 * Unchecked operation, assumes that software already knows if the element can be used, if
-		 * requested index is out of bounds then reference will point to somewhere inside the buffer
-		 * The isEmpty() and readAvailable() will place appropriate memory barriers if used as loop limiter
+		 * requested Index is out of bounds then reference will point to somewhere inside the buffer
+		 * The IsEmpty() and ReadAvailable() will place appropriate memory barriers if used as loop limiter
 		 * It is safe to use and modify T contents only on consumer side
 		 *
-		 * \param index Item offset starting on the consumed side
-		 * \return Reference to requested element, undefined if index exceeds storage count
+		 * @param Index Item offset starting on the consumed side
+		 * @return Reference to requested element, undefined if Index exceeds storage Count
 		 */
-		T& operator[](size_t index) {
-			return data_buff[(tail.load(std::memory_order_relaxed) + index) & buffer_mask];
+		T& operator[](size_t Index) {
+			return DataBuffer[(Tail.load(std::memory_order_relaxed) + Index) & BufferMask];
 		}
 
-		/*!
-		 * \brief Insert multiple elements into internal buffer without blocking
+		/**
+		 * @brief Insert multiple elements into internal buffer without blocking
 		 *
-		 * This function will insert as much data as possible from given buffer.
+		 * This function will Insert as much Data as possible from given buffer.
 		 *
-		 * \param[in] buff Pointer to buffer with data to be inserted from
-		 * \param count Number of elements to write from the given buffer
-		 * \return Number of elements written into internal buffer
+		 * @param[in] Buffer Pointer to buffer with Data to be inserted from
+		 * @param Count Number of elements to write from the given buffer
+		 * @return Number of elements Written into internal buffer
 		 */
-		size_t writeBuff(const T* buff, size_t count);
+		size_t WriteBuffer(const T* Buffer, size_t Count);
 
-		/*!
-		 * \brief Insert multiple elements into internal buffer without blocking
+		/**
+		 * @brief Insert multiple elements into internal buffer without blocking
 		 *
-		 * This function will continue writing new entries until all data is written or there is no more space.
-		 * The callback function can be used to indicate to consumer that it can start fetching data.
+		 * This function will continue writing new entries until all Data is Written or there is no more space.
+		 * The callback function can be used to indicate to consumer that it can start fetching Data.
 		 *
-		 * \warning This function is not deterministic
+		 * @warning This function is not deterministic
 		 *
-		 * \param[in] buff Pointer to buffer with data to be inserted from
-		 * \param count Number of elements to write from the given buffer
-		 * \param count_to_callback Number of elements to write before calling a callback function in first loop
-		 * \param execute_data_callback Pointer to callback function executed after every loop iteration
-		 * \return Number of elements written into internal  buffer
+		 * @param[in] Buffer Pointer to buffer with Data to be inserted from
+		 * @param Count Number of elements to write from the given buffer
+		 * @param CountToCallback Number of elements to write before calling a callback function in first loop
+		 * @param ExecuteDataCallback Pointer to callback function executed after every loop iteration
+		 * @return Number of elements Written into internal  buffer
 		 */
-		size_t writeBuff(const T* buff, size_t count, size_t count_to_callback, void (*execute_data_callback)(void));
+		size_t WriteBuffer(const T* Buffer, size_t Count, size_t CountToCallback, void (*ExecuteDataCallback)(void));
 
-		/*!
-		 * \brief Load multiple elements from internal buffer without blocking
+		/**
+		 * @brief Load multiple elements from internal buffer without blocking
 		 *
-		 * This function will read up to specified amount of data.
+		 * This function will read up to specified amount of Data.
 		 *
-		 * \param[out] buff Pointer to buffer where data will be loaded into
-		 * \param count Number of elements to load into the given buffer
-		 * \return Number of elements that were read from internal buffer
+		 * @param[out] Buffer Pointer to buffer where Data will be loaded into
+		 * @param Count Number of elements to load into the given buffer
+		 * @return Number of elements that were read from internal buffer
 		 */
-		size_t readBuff(T* buff, size_t count);
+		size_t ReadBuffer(T* Buffer, size_t Count);
 
-		/*!
-		 * \brief Load multiple elements from internal buffer without blocking
+		/**
+		 * @brief Load multiple elements from internal buffer without blocking
 		 *
-		 * This function will continue reading new entries until all requested data is read or there is nothing
+		 * This function will continue reading new entries until all requested Data is read or there is nothing
 		 * more to read.
-		 * The callback function can be used to indicate to producer that it can start writing new data.
+		 * The callback function can be used to indicate to producer that it can start writing new Data.
 		 *
-		 * \warning This function is not deterministic
+		 * @warning This function is not deterministic
 		 *
-		 * \param[out] buff Pointer to buffer where data will be loaded into
-		 * \param count Number of elements to load into the given buffer
-		 * \param count_to_callback Number of elements to load before calling a callback function in first iteration
-		 * \param execute_data_callback Pointer to callback function executed after every loop iteration
-		 * \return Number of elements that were read from internal buffer
+		 * @param[out] Buffer Pointer to buffer where Data will be loaded into
+		 * @param Count Number of elements to load into the given buffer
+		 * @param CountToCallback Number of elements to load before calling a callback function in first iteration
+		 * @param ExecuteDataCallback Pointer to callback function executed after every loop iteration
+		 * @return Number of elements that were read from internal buffer
 		 */
-		size_t readBuff(T* buff, size_t count, size_t count_to_callback, void (*execute_data_callback)(void));
+		size_t ReadBuffer(T* Buffer, size_t Count, size_t CountToCallback, void (*ExecuteDataCallback)(void));
 
 	private:
-		constexpr static index_t buffer_mask = buffer_size-1; //!< bitwise mask for a given buffer size
-		constexpr static std::memory_order index_acquire_barrier = fake_tso ?
+		constexpr static IndexType BufferMask = BufferSize - 1; //!< bitwise mask for a given buffer size
+		constexpr static std::memory_order IndexAcquireBarrier = bFakeTSO ?
 				  std::memory_order_relaxed
 				: std::memory_order_acquire; // do not load from, or store to buffer before confirmed by the opposite side
-		constexpr static std::memory_order index_release_barrier = fake_tso ?
+		constexpr static std::memory_order IndexReleaseBarrier = bFakeTSO ?
 				  std::memory_order_relaxed
-				: std::memory_order_release; // do not update own side before all operations on data_buff committed
+				: std::memory_order_release; // do not update own side before all operations on DataBuffer committed
 
-		alignas(cacheline_size) std::atomic<index_t> head; //!< head index
-		alignas(cacheline_size) std::atomic<index_t> tail; //!< tail index
+		alignas(CacheLineSize) std::atomic<IndexType> Head; //!< Head Index
+		alignas(CacheLineSize) std::atomic<IndexType> Tail; //!< Tail Index
 
 		// put buffer after variables so everything can be reached with short offsets
-		alignas(cacheline_size) T data_buff[buffer_size]; //!< actual buffer
+		alignas(CacheLineSize) T DataBuffer[BufferSize]{}; //!< actual buffer
 
 		// let's assert that no UB will be compiled in
-		static_assert((buffer_size != 0), "buffer cannot be of zero size");
-		static_assert((buffer_size & buffer_mask) == 0, "buffer size is not a power of 2");
-		static_assert(sizeof(index_t) <= sizeof(size_t),
+		static_assert((BufferSize != 0), "BufferSize must be greater than zero");
+		static_assert((BufferSize & BufferMask) == 0, "BufferSize must be a power of two");
+		static_assert(sizeof(IndexType) <= sizeof(size_t),
 			"indexing type size is larger than size_t, operation is not lock free and doesn't make sense");
 
-		static_assert(std::numeric_limits<index_t>::is_integer, "indexing type is not integral type");
-		static_assert(!(std::numeric_limits<index_t>::is_signed), "indexing type must not be signed");
-		static_assert(buffer_mask <= ((std::numeric_limits<index_t>::max)() >> 1),
+		static_assert(std::numeric_limits<IndexType>::is_integer, "IndexType must be an integral type");
+		static_assert(!(std::numeric_limits<IndexType>::is_signed), "IndexType must be unsigned");
+		static_assert(BufferMask <= ((std::numeric_limits<IndexType>::max)() >> 1),
 			"buffer size is too large for a given indexing type (maximum size for n-bit type is 2^(n-1))");
 
-		static_assert(std::is_trivial<T>::value, "non trivial objects will currently break");
+		static_assert(std::is_trivial<T>::value, "T must be a trivial type");
 	};
 
-	template<typename T, size_t buffer_size, bool fake_tso, size_t cacheline_size, typename index_t>
-	size_t Ringbuffer<T, buffer_size, fake_tso, cacheline_size, index_t>::writeBuff(const T* buff, size_t count)
+	template<typename T, size_t BufferSize, bool bFakeTSO, size_t CacheLineSize, typename IndexType>
+	size_t TRingBuffer<T, BufferSize, bFakeTSO, CacheLineSize, IndexType>::WriteBuffer(const T* Buffer, size_t Count)
 	{
-		index_t available = 0;
-		index_t tmp_head = head.load(std::memory_order_relaxed);
-		size_t to_write = count;
+		IndexType Available = 0;
+		IndexType TemporaryHead = Head.load(std::memory_order_relaxed);
+		size_t ToWrite = Count;
 
-		available = buffer_size - (tmp_head - tail.load(index_acquire_barrier));
+		Available = BufferSize - (TemporaryHead - Tail.load(IndexAcquireBarrier));
 
-		if(available < count) // do not write more than we can
-			to_write = available;
+		if(Available < Count) // do not write more than we can
+			ToWrite = Available;
 
 		// maybe divide it into 2 separate writes
-		for(size_t i = 0; i < to_write; i++)
-			data_buff[tmp_head++ & buffer_mask] = buff[i];
+		for (size_t i = 0; i < ToWrite; i++)
+			DataBuffer[TemporaryHead++ & BufferMask] = Buffer[i];
 
 		std::atomic_signal_fence(std::memory_order_release);
-		head.store(tmp_head, index_release_barrier);
+		Head.store(TemporaryHead, IndexReleaseBarrier);
 
-		return to_write;
+		return ToWrite;
 	}
 
-	template<typename T, size_t buffer_size, bool fake_tso, size_t cacheline_size, typename index_t>
-	size_t Ringbuffer<T, buffer_size, fake_tso, cacheline_size, index_t>::writeBuff(const T* buff, size_t count,
-			size_t count_to_callback, void(*execute_data_callback)())
+	template<typename T, size_t BufferSize, bool bFakeTSO, size_t CacheLineSize, typename IndexType>
+	size_t TRingBuffer<T, BufferSize, bFakeTSO, CacheLineSize, IndexType>::WriteBuffer(const T* Buffer, size_t Count,
+			size_t CountToCallback, void(*ExecuteDataCallback)())
 	{
-		size_t written = 0;
-		index_t available = 0;
-		index_t tmp_head = head.load(std::memory_order_relaxed);
-		size_t to_write = count;
+		size_t Written = 0;
+		IndexType Available = 0;
+		IndexType TemporaryHead = Head.load(std::memory_order_relaxed);
+		size_t ToWrite = Count;
 
-		if(count_to_callback != 0 && count_to_callback < count)
-			to_write = count_to_callback;
+		if(CountToCallback != 0 && CountToCallback < Count)
+			ToWrite = CountToCallback;
 
-		while(written < count)
+		while(Written < Count)
 		{
-			available = buffer_size - (tmp_head - tail.load(index_acquire_barrier));
+			Available = BufferSize - (TemporaryHead - Tail.load(IndexAcquireBarrier));
 
-			if(available == 0) // less than ??
+			if (Available == 0) // less than ??
 				break;
 
-			if(to_write > available) // do not write more than we can
-				to_write = available;
+			if (ToWrite > Available) // do not write more than we can
+				ToWrite = Available;
 
-			while(to_write--)
-				data_buff[tmp_head++ & buffer_mask] = buff[written++];
+			while (ToWrite--)
+				DataBuffer[TemporaryHead++ & BufferMask] = Buffer[Written++];
 
 			std::atomic_signal_fence(std::memory_order_release);
-			head.store(tmp_head, index_release_barrier);
+			Head.store(TemporaryHead, IndexReleaseBarrier);
 
-			if(execute_data_callback != nullptr)
-				execute_data_callback();
+			if(ExecuteDataCallback != nullptr)
+				ExecuteDataCallback();
 
-			to_write = count - written;
+			ToWrite = Count - Written;
 		}
 
-		return written;
+		return Written;
 	}
 
-	template<typename T, size_t buffer_size, bool fake_tso, size_t cacheline_size, typename index_t>
-	size_t Ringbuffer<T, buffer_size, fake_tso, cacheline_size, index_t>::readBuff(T* buff, size_t count)
+	template<typename T, size_t BufferSize, bool bFakeTSO, size_t CacheLineSize, typename IndexType>
+	size_t TRingBuffer<T, BufferSize, bFakeTSO, CacheLineSize, IndexType>::ReadBuffer(T* Buffer, size_t Count)
 	{
-		index_t available = 0;
-		index_t tmp_tail = tail.load(std::memory_order_relaxed);
-		size_t to_read = count;
+		IndexType Available = 0;
+		IndexType TemporaryTail = Tail.load(std::memory_order_relaxed);
+		size_t ToRead = Count;
 
-		available = head.load(index_acquire_barrier) - tmp_tail;
+		Available = Head.load(IndexAcquireBarrier) - TemporaryTail;
 
-		if(available < count) // do not read more than we can
-			to_read = available;
+		if(Available < Count) // do not read more than we can
+			ToRead = Available;
 
 		// maybe divide it into 2 separate reads
-		for(size_t i = 0; i < to_read; i++)
-			buff[i] = data_buff[tmp_tail++ & buffer_mask];
+		for (size_t i = 0; i < ToRead; i++)
+			Buffer[i] = DataBuffer[TemporaryTail++ & BufferMask];
 
 		std::atomic_signal_fence(std::memory_order_release);
-		tail.store(tmp_tail, index_release_barrier);
+		Tail.store(TemporaryTail, IndexReleaseBarrier);
 
-		return to_read;
+		return ToRead;
 	}
 
-	template<typename T, size_t buffer_size, bool fake_tso, size_t cacheline_size, typename index_t>
-	size_t Ringbuffer<T, buffer_size, fake_tso, cacheline_size, index_t>::readBuff(T* buff, size_t count,
-			size_t count_to_callback, void(*execute_data_callback)())
+	template<typename T, size_t BufferSize, bool bFakeTSO, size_t CacheLineSize, typename IndexType>
+	size_t TRingBuffer<T, BufferSize, bFakeTSO, CacheLineSize, IndexType>::ReadBuffer(T* Buffer, size_t Count,
+			size_t CountToCallback, void(*ExecuteDataCallback)())
 	{
 		size_t read = 0;
-		index_t available = 0;
-		index_t tmp_tail = tail.load(std::memory_order_relaxed);
-		size_t to_read = count;
+		IndexType Available = 0;
+		IndexType TemporaryTail = Tail.load(std::memory_order_relaxed);
+		size_t ToRead = Count;
 
-		if(count_to_callback != 0 && count_to_callback < count)
-			to_read = count_to_callback;
+		if(CountToCallback != 0 && CountToCallback < Count)
+			ToRead = CountToCallback;
 
-		while(read < count)
+		while(read < Count)
 		{
-			available = head.load(index_acquire_barrier) - tmp_tail;
+			Available = Head.load(IndexAcquireBarrier) - TemporaryTail;
 
-			if(available == 0) // less than ??
+			if (Available == 0) // less than ??
 				break;
 
-			if(to_read > available) // do not write more than we can
-				to_read = available;
+			if (ToRead > Available) // do not write more than we can
+				ToRead = Available;
 
-			while(to_read--)
-				buff[read++] = data_buff[tmp_tail++ & buffer_mask];
+			while (ToRead--)
+				Buffer[read++] = DataBuffer[TemporaryTail++ & BufferMask];
 
 			std::atomic_signal_fence(std::memory_order_release);
-			tail.store(tmp_tail, index_release_barrier);
+			Tail.store(TemporaryTail, IndexReleaseBarrier);
 
-			if(execute_data_callback != nullptr)
-				execute_data_callback();
+			if(ExecuteDataCallback != nullptr)
+				ExecuteDataCallback();
 
-			to_read = count - read;
+			ToRead = Count - read;
 		}
 
 		return read;
 	}
 
-} // namespace
+} // namespace Jnk0le
 

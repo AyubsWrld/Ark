@@ -94,6 +94,11 @@ target_link_libraries(
         #arkcommon
 )
 
+target_compile_options(ark PRIVATE
+    $<$<CONFIG:Debug>:-O0>
+    $<$<CONFIG:Debug>:-g>
+)
+
 target_compile_definitions(${CMAKE_PROJECT_NAME}
     PRIVATE 
     TRACY_ENABLE

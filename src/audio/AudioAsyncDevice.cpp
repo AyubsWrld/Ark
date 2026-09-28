@@ -3,6 +3,8 @@
 #include "AudioDeviceManager.hpp"
 #include "AudioVisualizer.hpp"
 #include "signals.hpp"
+#include "RingBuffer.hpp"
+#include "WavWriter.hpp"
 
 #include <SDL_audio.h>
 #include <SDL_stdinc.h>
@@ -75,8 +77,6 @@ namespace Ark
         };
         capture_spec_desired.userdata = this;
 
-        spdlog::info("{}", SDL_GetAudioDeviceName(0,SDL_TRUE));
-        // SDL_OpenAudio(), unlike this function, always acts on device ID 1. As such,  this function will never return 1.
         mId = SDL_OpenAudioDevice(SDL_GetAudioDeviceName(0, SDL_TRUE), SDL_TRUE, &capture_spec_desired, &capture_spec_obtained, 0);
 
         mDeviceInfo.name        =  SDL_GetAudioDeviceName(0,SDL_TRUE);
@@ -95,32 +95,24 @@ namespace Ark
                     SDL_GetError());
             return EAudioDeviceError::OpenFailure;
         }
-
-        spdlog::info(
-                "[{:s}]: Successfully opened audio device \"{}\"",
-                __PRETTY_FUNCTION__,
-                mId);
-        spdlog::info(
-            "\n"
-            "Capture Specification Obtained for \"{}\"\n"
-            "----------------------------------------\n"
-            "  {:<12} {}\n"
-            "  {:<12} {}\n"
-            "  {:<12} {}\n"
-            "  {:<12} {}\n"
-            "----------------------------------------",
-            SDL_GetAudioDeviceName(0, SDL_TRUE),
-            "Frequency:", capture_spec_obtained.freq,
-            "Format:",    capture_spec_obtained.format,
-            "Samples:",   capture_spec_obtained.samples,
-            "Channels:",  capture_spec_obtained.channels
-        ); 
         return EAudioDeviceError::Success;
     }
 
     template<typename T>
     void UAudioAsyncDevice<T>::Callback(uint8_t* stream, int len) noexcept
     {
+        mBuffer.WriteBuffer((T*)stream, len / sizeof(T));
+    	auto WriteAvailable = mBuffer.WriteAvailable();
+    	if ( WriteAvailable <= 0 )
+    	{
+    		auto ReadAvailable = mBuffer.ReadAvailable();
+    		WavWriter writer;
+    		writer.Open("test_audio.wav", 16000, 16, 1);
+    		T Buffer[4096];
+    		mBuffer.ReadBuffer(Buffer, 4096);
+    		writer.Write(Buffer, ReadAvailable);
+    		std::cout << "Done Writing: " << Buffer[0] << std::endl;
+    	}
     }
 
 

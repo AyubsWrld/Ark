@@ -11,6 +11,7 @@ target_sources(arkaudio
         AudioAsyncDevice.cpp
         AudioDeviceManager.cpp
         AudioDevice.cpp
+        WavWriter.cpp
 )
 
 target_link_libraries(arkaudio
