@@ -9,6 +9,7 @@ target_sources(arkaudio
     PUBLIC
         sdl_impl.cpp
         AudioAsyncDevice.cpp
+        AudioSyncDevice.cpp
         AudioDeviceManager.cpp
         AudioDevice.cpp
         WavWriter.cpp

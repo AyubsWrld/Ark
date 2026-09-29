@@ -27,7 +27,7 @@ IndentGotoLabels: false
 IndentPPDirectives: None
 PPIndentWidth: 4
 
-NamespaceIndentation: None
+NamespaceIndentation: All
 
 IndentWrappedFunctionNames: false
 IndentRequiresClause: true

@@ -15,11 +15,8 @@ namespace Ark
     {
         // using AudioCallback = void(uint8_t * stream, int len);
 
-        EAudioDeviceState   mState {EAudioDeviceState::Stopped} ;
-        FAudioDeviceInfo    mDeviceInfo;
-        std::uint32_t       mId; 
-        std::uint32_t       SampleRate;
-        TRingBuffer<T, 4096>      mBuffer; // 1kb ~ 8kb buffer.
+        FAudioDeviceInfo		mDeviceInfo;
+        TRingBuffer<T, 4096>	mBuffer; // 1kb ~ 8kb buffer.
 
     public:
 

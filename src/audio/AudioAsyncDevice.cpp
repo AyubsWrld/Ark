@@ -26,23 +26,23 @@ namespace Ark
     template<typename T> 
     void UAudioAsyncDevice<T>::Pause() noexcept
     { 
-        spdlog::info("Attempting to play deviceID: {}\n", mId);
-        if (SDL_GetAudioDeviceStatus(mId) == SDL_AUDIO_PAUSED) { return; }
-        SDL_PauseAudioDevice(mId, SDL_TRUE);
-        mState = EAudioDeviceState::Paused;
+        spdlog::info("Attempting to play deviceID: {}\n", mDeviceInfo.ID);
+        if (SDL_GetAudioDeviceStatus(mDeviceInfo.ID) == SDL_AUDIO_PAUSED) { return; }
+        SDL_PauseAudioDevice(mDeviceInfo.ID, SDL_TRUE);
+        mDeviceInfo.State = EAudioDeviceState::Paused;
     }
 
     template<typename T> 
     void UAudioAsyncDevice<T>::Play() noexcept
     { 
-        if (SDL_GetAudioDeviceStatus(mId) == SDL_AUDIO_PLAYING) 
+        if (SDL_GetAudioDeviceStatus(mDeviceInfo.ID) == SDL_AUDIO_PLAYING)
         {
-            spdlog::info("Already Playing device", mId);
+            spdlog::info("Already Playing device", mDeviceInfo.ID);
             return; 
         }
-        spdlog::info("Attempting to play deviceID: {}\n", mId);
-        SDL_PauseAudioDevice(mId, SDL_FALSE);
-        mState = EAudioDeviceState::Playing;
+        spdlog::info("Attempting to play deviceID: {}\n", mDeviceInfo.ID);
+        SDL_PauseAudioDevice(mDeviceInfo.ID, SDL_FALSE);
+        mDeviceInfo.State = EAudioDeviceState::Playing;
     }
 
     template<typename T> 
@@ -77,17 +77,17 @@ namespace Ark
         };
         capture_spec_desired.userdata = this;
 
-        mId = SDL_OpenAudioDevice(SDL_GetAudioDeviceName(0, SDL_TRUE), SDL_TRUE, &capture_spec_desired, &capture_spec_obtained, 0);
+        mDeviceInfo.ID = SDL_OpenAudioDevice(SDL_GetAudioDeviceName(0, SDL_TRUE), SDL_TRUE, &capture_spec_desired, &capture_spec_obtained, 0);
 
-        mDeviceInfo.name        =  SDL_GetAudioDeviceName(0,SDL_TRUE);
-        mDeviceInfo.format      =  SDL_GetAudioDeviceName(0,SDL_TRUE); // Swap see SDL_audio.h:123 for names... 
-        mDeviceInfo.frequency   =  capture_spec_obtained.freq;
-        mDeviceInfo.size        =  capture_spec_obtained.size;
-        mDeviceInfo.samples     =  capture_spec_obtained.samples;
-        mDeviceInfo.channels     =  capture_spec_obtained.channels;
+        mDeviceInfo.Name        =  SDL_GetAudioDeviceName(0,SDL_TRUE);
+        mDeviceInfo.Format      =  SDL_GetAudioDeviceName(0,SDL_TRUE); // Swap see SDL_audio.h:123 for names...
+        mDeviceInfo.Frequency   =  capture_spec_obtained.freq;
+        mDeviceInfo.Size        =  capture_spec_obtained.size;
+        mDeviceInfo.Samples		=  capture_spec_obtained.samples;
+        mDeviceInfo.Channels     =  capture_spec_obtained.channels;
 
 
-        if (!mId)
+        if (!mDeviceInfo.ID) // TODO : this is all quite backend specific.
         {
             spdlog::error(
                     "[{:s}]: Failed to open audio device: {}",

@@ -8,7 +8,14 @@ project(
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_C_COMPILER "E:/msys2/clang64/bin/clang.exe")
+set(CMAKE_CXX_COMPILER "E:/msys2/clang64/bin/clang++.exe")
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(LLAMA_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(LLAMA_BUILD_TOOLS OFF CACHE BOOL "" FORCE)
+set(LLAMA_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(LLAMA_BUILD_SERVER OFF CACHE BOOL "" FORCE)
+set(LLAMA_BUILD_APP OFF CACHE BOOL "" FORCE)
 
 set(
     WHISPER_SDK_DIR
@@ -24,7 +31,9 @@ find_package(SDL2 REQUIRED)
 find_package(whisper REQUIRED)
 find_package(GGML REQUIRED)
 
-add_executable(${CMAKE_PROJECT_NAME})
+add_executable(${CMAKE_PROJECT_NAME}
+        include/audio/AudioSyncDevice.hpp)
+
 target_sources(${CMAKE_PROJECT_NAME}
     PUBLIC
     src/main.cpp
@@ -33,10 +42,11 @@ target_sources(${CMAKE_PROJECT_NAME}
     src/common-sdl.cpp
 )
 
-#add_subdirectory(${CMAKE_SOURCE_DIR}/src/common) # this behaves weirdly on darwin. 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/asr)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/utils)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/audio)
+add_subdirectory(${CMAKE_SOURCE_DIR}/external/piper/libpiper)
+#add_subdirectory(${CMAKE_SOURCE_DIR}/external/llama)
 
 
 
@@ -91,6 +101,8 @@ target_link_libraries(
         arkasr
         arkaudio
         arkutils
+        piper
+        llama
         #arkcommon
 )
 
