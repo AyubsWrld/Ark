@@ -74,7 +74,8 @@ namespace Ark
 		[[nodiscard]] EAudioDeviceError Init();
 		[[nodiscard]] FAudioDeviceInfo  GetInfo() const noexcept;
 
-        std::span<float> Get() const noexcept;
+        const float* Get() const noexcept;
+        std::size_t Size() const noexcept;
 		void Pause()    noexcept;
 		void Play()   noexcept;
 		void Callback(uint8_t * stream, int len) noexcept;

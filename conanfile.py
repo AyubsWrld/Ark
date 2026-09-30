@@ -10,6 +10,7 @@ class ArkConan(ConanFile):
         self.requires("spdlog/1.15.3")
         self.requires("tracy/0.13.1")
         self.requires("ftxui/7.0.3")
+        self.requires("whisper-cpp/1.8.2")
 
     def layout(self):
         pass

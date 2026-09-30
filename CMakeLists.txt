@@ -8,8 +8,6 @@ project(
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 23)
-set(CMAKE_C_COMPILER "E:/msys2/clang64/bin/clang.exe")
-set(CMAKE_CXX_COMPILER "E:/msys2/clang64/bin/clang++.exe")
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(LLAMA_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(LLAMA_BUILD_TOOLS OFF CACHE BOOL "" FORCE)
@@ -17,18 +15,11 @@ set(LLAMA_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(LLAMA_BUILD_SERVER OFF CACHE BOOL "" FORCE)
 set(LLAMA_BUILD_APP OFF CACHE BOOL "" FORCE)
 
-set(
-    WHISPER_SDK_DIR
-    "${CMAKE_SOURCE_DIR}/third_party/whisper-sdk"
-    CACHE PATH
-    "Path to whisper.cpp SDK"
-)
-
 find_package(spdlog REQUIRED)
 find_package(ftxui REQUIRED)
 find_package(Tracy REQUIRED)
 find_package(SDL2 REQUIRED)
-find_package(whisper REQUIRED)
+find_package(whisper-cpp REQUIRED)
 find_package(GGML REQUIRED)
 
 add_executable(${CMAKE_PROJECT_NAME}
@@ -45,7 +36,7 @@ target_sources(${CMAKE_PROJECT_NAME}
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/asr)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/utils)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/audio)
-add_subdirectory(${CMAKE_SOURCE_DIR}/external/piper/libpiper)
+#add_subdirectory(${CMAKE_SOURCE_DIR}/external/piper/libpiper)
 #add_subdirectory(${CMAKE_SOURCE_DIR}/external/llama)
 
 
@@ -96,24 +87,16 @@ target_link_libraries(
         ftxui::dom
         ftxui::component
         spdlog::spdlog
-        Tracy::TracyClient
-        whisper
+        whisper-cpp::whisper-cpp
         arkasr
         arkaudio
         arkutils
-        piper
-        llama
         #arkcommon
 )
 
 target_compile_options(ark PRIVATE
     $<$<CONFIG:Debug>:-O0>
     $<$<CONFIG:Debug>:-g>
-)
-
-target_compile_definitions(${CMAKE_PROJECT_NAME}
-    PRIVATE 
-    TRACY_ENABLE
 )
 
 

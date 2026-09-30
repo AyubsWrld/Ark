@@ -7,7 +7,6 @@
  * the resulting text, prints it, and then repeats.
  */
 #include "RingBuffer.hpp"
-#include "asr.hpp"
 #include "whisper.h"
 
 #include "AudioDeviceManager.hpp"
@@ -18,142 +17,11 @@
 
 #include <SDL2/SDL.h>
 #include <SDL_audio.h>
-#include <SDL_stdinc.h>
 #include <cstdlib>
 #include <iostream>
-#include <llama.h>
 
 
 using RingBuffer = Ark::TRingBuffer<float, 8192>;
-
-std::string Talk(std::string Prompt)
-{
-	const char* ModelPath = "models/model.gguf";
-
-    ggml_backend_load_all();
-
-    llama_model_params ModelParams =
-        llama_model_default_params();
-
-    llama_model* Model =
-        llama_model_load_from_file(
-            ModelPath,
-            ModelParams);
-
-    if (!Model)
-    {
-        std::fprintf(stderr, "Failed to load model\n");
-    	std::exit(EXIT_FAILURE);
-    }
-
-    const llama_vocab* Vocab =
-        llama_model_get_vocab(Model);
-
-    llama_context_params ContextParams =
-        llama_context_default_params();
-
-    llama_context* Context =
-        llama_init_from_model(
-            Model,
-            ContextParams);
-
-    if (!Context)
-    {
-        std::fprintf(stderr, "Failed to create context\n");
-        llama_model_free(Model);
-    	std::exit(EXIT_FAILURE);
-    }
-
-    llama_sampler* Sampler =
-        llama_sampler_chain_init(
-            llama_sampler_chain_default_params());
-
-    llama_sampler_chain_add(
-        Sampler,
-        llama_sampler_init_temp(0.8f));
-
-    llama_sampler_chain_add(
-        Sampler,
-        llama_sampler_init_dist(LLAMA_DEFAULT_SEED));
-
-    const int TokenCount =
-        -llama_tokenize(
-            Vocab,
-            Prompt.c_str(),
-            Prompt.size(),
-            nullptr,
-            0,
-            true,
-            true);
-
-    std::vector<llama_token> Tokens(TokenCount);
-
-    llama_tokenize(
-        Vocab,
-        Prompt.c_str(),
-        Prompt.size(),
-        Tokens.data(),
-        Tokens.size(),
-        true,
-        true);
-
-    llama_batch Batch =
-        llama_batch_get_one(
-            Tokens.data(),
-            Tokens.size());
-
-    while (true)
-    {
-        if (llama_decode(Context, Batch) != 0)
-        {
-            break;
-        }
-
-        llama_token Token =
-            llama_sampler_sample(
-                Sampler,
-                Context,
-                -1);
-
-        if (llama_vocab_is_eog(Vocab, Token))
-        {
-            break;
-        }
-
-        char Buffer[256];
-
-        const int Length =
-            llama_token_to_piece(
-                Vocab,
-                Token,
-                Buffer,
-                sizeof(Buffer),
-                0,
-                true);
-
-        if (Length > 0)
-        {
-            std::fwrite(
-                Buffer,
-                1,
-                Length,
-                stdout);
-        }
-
-        Batch =
-            llama_batch_get_one(
-                &Token,
-                1);
-    }
-
-    std::printf("\n");
-
-    llama_sampler_free(Sampler);
-    llama_free(Context);
-    llama_model_free(Model);
-
-    return {};
-}
 
 int main (int argc, char **argv)
 {
@@ -192,16 +60,16 @@ int main (int argc, char **argv)
     		std::vector<float> Audio;
     		std::vector<std::vector<float>> StereoAudio;
 
-    		if (!read_audio_data(
+			if (!read_audio_data(
 					WavPath,
 					Audio,
 					StereoAudio,
 					false))
-    		{
-    			std::fprintf(stderr, "Failed to load WAV file\n");
-    			whisper_free(Context);
-    			return 1;
-    		}
+			{
+				std::fprintf(stderr, "Failed to load WAV file\n");
+				whisper_free(Context);
+				return 1;
+			}
 
     		// Stock inference parameters.
     		whisper_full_params Params =
@@ -235,7 +103,6 @@ int main (int argc, char **argv)
 
     		std::printf("\n");
     		whisper_free(Context);
-    		Talk("How are you?");
     		break;
     	}
 

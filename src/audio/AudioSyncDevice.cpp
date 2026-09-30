@@ -99,9 +99,14 @@ namespace Ark
 		return mDeviceInfo;
 	}
 
-	std::span<float> UAudioSyncDevice::Get() const noexcept
+	const float* UAudioSyncDevice::Get() const noexcept
 	{
-		return {};
+		return mBuffer.DataBuffer.data();
+	}
+
+	std::size_t UAudioSyncDevice::Size() const noexcept
+	{
+		return mBuffer.DataBuffer.size();
 	}
 
 	void UAudioSyncDevice::Pause() noexcept

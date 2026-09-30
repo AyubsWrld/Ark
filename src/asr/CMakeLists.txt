@@ -1,29 +1,12 @@
-add_library(arkasr) 
+add_library(arkasr)
 
 target_sources(arkasr
     PUBLIC
-    asr.cpp
+    AutoSpeechRecognition.cpp
 )
 
 find_package(SDL2 REQUIRED)
-
-# find_library(
-#     WHISPER_LIBRARY
-#     NAMES whisper libwhisper
-#     PATHS
-#         "${WHISPER_SDK_DIR}/lib"
-#         "${WHISPER_SDK_DIR}/bin"
-#     REQUIRED
-# )
-
-# find_library(
-#     GGML_LIBRARY
-#     NAMES ggml
-#     PATHS
-#         "${WHISPER_SDK_DIR}/lib"
-#         "${WHISPER_SDK_DIR}/bin"
-#     REQUIRED
-# )
+find_package(spdlog REQUIRED)
 
 target_include_directories(
     arkasr
@@ -38,5 +21,6 @@ target_include_directories(
 target_link_libraries(
     arkasr
     PRIVATE
+        spdlog::spdlog
         #${SDL2_LIBRARIES}
 )
