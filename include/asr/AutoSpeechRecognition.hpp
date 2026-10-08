@@ -2,53 +2,51 @@
 
 #include <whisper.h>
 #include <spdlog/spdlog.h>
+#include <expected>
 #include <string>
+#include <vector>
 
-enum class EAutoSpeechRecognitionError
+namespace Ark
 {
-	Success,
-	UnspecifiedError,
-	InitializationError,
-	_max
-};
-
-class AutoSpeechRecognition
-{
-	const char* ModelPath;
-	const char* WavPath;
-	whisper_context_params ContextParams;
-	whisper_full_params Params;
-	whisper_context* Context;
-
-public:
-	AutoSpeechRecognition() = default;
-	~AutoSpeechRecognition() = default;
-
-	AutoSpeechRecognition(AutoSpeechRecognition&) = delete;
-	AutoSpeechRecognition(AutoSpeechRecognition&&) = delete;
-
-	AutoSpeechRecognition& operator=(AutoSpeechRecognition&) = delete;
-	AutoSpeechRecognition& operator=(AutoSpeechRecognition&&) = delete;
-
-	[[nodiscard]] EAutoSpeechRecognitionError Init()
+	enum class ESpeechRecognizerError
 	{
-		using enum EAutoSpeechRecognitionError;
-		ContextParams = whisper_context_default_params();
-		Context = whisper_init_from_file_with_params(ModelPath, ContextParams);
-
-		if (!Context)
-		{
-			spdlog::error("{:s}: Failed to initialize ASR pipeline");
-			Cleanup();
-			return InitializationError;
-		}
-		return Success;
+		Success,
+		UnspecifiedError,
+		PipelineError,
+		InitializationError,
+		_max
 	};
 
-	[[nodiscard]] std::string Execute() noexcept;
-
-	[[nodiscard]] void Cleanup() noexcept
+	struct FSpeechRecognizerConfig
 	{
-		whisper_free(Context);
+		const char* ModelPath;
 	};
-};
+
+	class USpeechRecognizer
+	{
+		const char* ModelPath;
+		const char* WavPath = "test_audio.wav";
+		whisper_context_params ContextParams;
+		whisper_full_params TranscriptionParams;
+		whisper_context* Context;
+
+	public:
+		USpeechRecognizer(const char* ModelPath);
+		~USpeechRecognizer();
+
+		USpeechRecognizer(USpeechRecognizer&) = delete;
+		USpeechRecognizer(USpeechRecognizer&&) = delete;
+
+		USpeechRecognizer& operator=(USpeechRecognizer&) = delete;
+		USpeechRecognizer& operator=(USpeechRecognizer&&) = delete;
+
+		[[nodiscard]] std::expected<std::string, ESpeechRecognizerError>
+		Transcribe(std::vector<float>& Samples) noexcept;
+
+		[[nodiscard]] ESpeechRecognizerError Init();
+		[[nodiscard]] ESpeechRecognizerError SetContext() noexcept;
+		[[nodiscard]] ESpeechRecognizerError LoadModel() noexcept;
+		[[nodiscard]] std::string Execute() noexcept;
+		void Cleanup() noexcept;
+	};
+}

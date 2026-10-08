@@ -1,69 +1,81 @@
 [
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DTRACY_ENABLE -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IC:/Users/iwant/.conan2/p/b/spdloec78c4b2e97b5/p/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -isystem E:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\main.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\main.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/home/0xtrensetta/Projects/Ark/include/language_synthesizer -isystem E:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\main.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\main.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/main.cpp",
   "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/CMakeFiles/ark.dir/src/main.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DTRACY_ENABLE -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IC:/Users/iwant/.conan2/p/b/spdloec78c4b2e97b5/p/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -isystem E:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\common-whisper.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\common-whisper.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/home/0xtrensetta/Projects/Ark/include/language_synthesizer -isystem E:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\common-whisper.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\common-whisper.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/common-whisper.cpp",
   "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/CMakeFiles/ark.dir/src/common-whisper.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DTRACY_ENABLE -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IC:/Users/iwant/.conan2/p/b/spdloec78c4b2e97b5/p/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -isystem E:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\common.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\common.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/home/0xtrensetta/Projects/Ark/include/language_synthesizer -isystem E:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\common.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\common.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/common.cpp",
   "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/CMakeFiles/ark.dir/src/common.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DTRACY_ENABLE -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IC:/Users/iwant/.conan2/p/b/spdloec78c4b2e97b5/p/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -isystem E:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\common-sdl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\common-sdl.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/home/0xtrensetta/Projects/Ark/include/language_synthesizer -isystem E:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\common-sdl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\common-sdl.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/common-sdl.cpp",
   "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/CMakeFiles/ark.dir/src/common-sdl.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DTRACY_ENABLE -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IC:/Users/iwant/.conan2/p/b/spdloec78c4b2e97b5/p/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -isystem E:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\asr\\asr.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\asr\\asr.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/asr/asr.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/CMakeFiles/ark.dir/src/asr/asr.cpp.obj"
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/home/0xtrensetta/Projects/Ark/include/language_synthesizer -isystem E:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\asr\\AutoSpeechRecognition.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\asr\\AutoSpeechRecognition.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/asr/AutoSpeechRecognition.cpp",
+  "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/CMakeFiles/ark.dir/src/asr/AutoSpeechRecognition.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DTRACY_ENABLE -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IC:/Users/iwant/.conan2/p/b/spdloec78c4b2e97b5/p/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -isystem E:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\audio\\sdl_impl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\sdl_impl.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/home/0xtrensetta/Projects/Ark/include/language_synthesizer -isystem E:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\audio\\sdl_impl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\sdl_impl.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/audio/sdl_impl.cpp",
   "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/CMakeFiles/ark.dir/src/audio/sdl_impl.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DTRACY_ENABLE -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IC:/Users/iwant/.conan2/p/b/spdloec78c4b2e97b5/p/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -isystem E:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\audio\\AudioAsyncDevice.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\AudioAsyncDevice.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/home/0xtrensetta/Projects/Ark/include/language_synthesizer -isystem E:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\audio\\AudioAsyncDevice.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\AudioAsyncDevice.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/audio/AudioAsyncDevice.cpp",
   "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/CMakeFiles/ark.dir/src/audio/AudioAsyncDevice.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DTRACY_ENABLE -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IC:/Users/iwant/.conan2/p/b/spdloec78c4b2e97b5/p/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -isystem E:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\audio\\AudioDeviceManager.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\AudioDeviceManager.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/home/0xtrensetta/Projects/Ark/include/language_synthesizer -isystem E:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\audio\\AudioSyncDevice.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\AudioSyncDevice.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/audio/AudioSyncDevice.cpp",
+  "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/CMakeFiles/ark.dir/src/audio/AudioSyncDevice.cpp.obj"
+},
+{
+  "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/home/0xtrensetta/Projects/Ark/include/language_synthesizer -isystem E:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\audio\\AudioDeviceManager.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\AudioDeviceManager.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/audio/AudioDeviceManager.cpp",
   "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/CMakeFiles/ark.dir/src/audio/AudioDeviceManager.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DTRACY_ENABLE -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IC:/Users/iwant/.conan2/p/b/spdloec78c4b2e97b5/p/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -isystem E:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\audio\\AudioDevice.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\AudioDevice.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/home/0xtrensetta/Projects/Ark/include/language_synthesizer -isystem E:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\audio\\AudioDevice.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\AudioDevice.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/audio/AudioDevice.cpp",
   "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/CMakeFiles/ark.dir/src/audio/AudioDevice.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DTRACY_ENABLE -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IC:/Users/iwant/.conan2/p/b/spdloec78c4b2e97b5/p/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -isystem E:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\utils\\PlatformMisc.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\utils\\PlatformMisc.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/home/0xtrensetta/Projects/Ark/include/language_synthesizer -isystem E:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\audio\\WavWriter.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\WavWriter.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/audio/WavWriter.cpp",
+  "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/CMakeFiles/ark.dir/src/audio/WavWriter.cpp.obj"
+},
+{
+  "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/SDLWrapper -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/home/0xtrensetta/Projects/Ark/include/language_synthesizer -isystem E:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -m64 -stdlib=libc++ -g -std=c++23 -o CMakeFiles\\ark.dir\\src\\utils\\PlatformMisc.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\utils\\PlatformMisc.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/utils/PlatformMisc.cpp",
   "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/CMakeFiles/ark.dir/src/utils/PlatformMisc.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/common -IE:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o src\\asr\\CMakeFiles\\arkasr.dir\\asr.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\asr\\asr.cpp",
-  "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/asr/asr.cpp",
-  "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/src/asr/CMakeFiles/arkasr.dir/asr.cpp.obj"
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include/asr -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/common -IE:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -m64 -stdlib=libc++ -g -std=c++23 -o src\\asr\\CMakeFiles\\arkasr.dir\\AutoSpeechRecognition.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\asr\\AutoSpeechRecognition.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/asr/AutoSpeechRecognition.cpp",
+  "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/src/asr/CMakeFiles/arkasr.dir/AutoSpeechRecognition.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
@@ -73,26 +85,44 @@
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o src\\audio\\CMakeFiles\\arkaudio.dir\\sdl_impl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\sdl_impl.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -m64 -stdlib=libc++ -g -std=c++23 -o src\\audio\\CMakeFiles\\arkaudio.dir\\sdl_impl.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\sdl_impl.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/audio/sdl_impl.cpp",
   "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/src/audio/CMakeFiles/arkaudio.dir/sdl_impl.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o src\\audio\\CMakeFiles\\arkaudio.dir\\AudioAsyncDevice.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\AudioAsyncDevice.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -m64 -stdlib=libc++ -g -std=c++23 -o src\\audio\\CMakeFiles\\arkaudio.dir\\AudioAsyncDevice.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\AudioAsyncDevice.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/audio/AudioAsyncDevice.cpp",
   "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/src/audio/CMakeFiles/arkaudio.dir/AudioAsyncDevice.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o src\\audio\\CMakeFiles\\arkaudio.dir\\AudioDeviceManager.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\AudioDeviceManager.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -m64 -stdlib=libc++ -g -std=c++23 -o src\\audio\\CMakeFiles\\arkaudio.dir\\AudioSyncDevice.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\AudioSyncDevice.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/audio/AudioSyncDevice.cpp",
+  "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/src/audio/CMakeFiles/arkaudio.dir/AudioSyncDevice.cpp.obj"
+},
+{
+  "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -m64 -stdlib=libc++ -g -std=c++23 -o src\\audio\\CMakeFiles\\arkaudio.dir\\AudioDeviceManager.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\AudioDeviceManager.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/audio/AudioDeviceManager.cpp",
   "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/src/audio/CMakeFiles/arkaudio.dir/AudioDeviceManager.cpp.obj"
 },
 {
   "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
-  "command": "E:\\msys2\\clang64\\bin\\c++.exe -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/clang64/include/SDL2 -m64 -stdlib=libc++ -g -std=c++23 -o src\\audio\\CMakeFiles\\arkaudio.dir\\AudioDevice.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\AudioDevice.cpp",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -m64 -stdlib=libc++ -g -std=c++23 -o src\\audio\\CMakeFiles\\arkaudio.dir\\AudioDevice.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\AudioDevice.cpp",
   "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/audio/AudioDevice.cpp",
   "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/src/audio/CMakeFiles/arkaudio.dir/AudioDevice.cpp.obj"
+},
+{
+  "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include/audio -IE:/msys2/home/0xtrensetta/Projects/Ark/include/utils -IE:/msys2/clang64/include/SDL2 -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -isystem C:/Users/iwant/.conan2/p/b/ftxui34e53650bebd3/p/include -m64 -stdlib=libc++ -g -std=c++23 -o src\\audio\\CMakeFiles\\arkaudio.dir\\WavWriter.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\audio\\WavWriter.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/audio/WavWriter.cpp",
+  "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/src/audio/CMakeFiles/arkaudio.dir/WavWriter.cpp.obj"
+},
+{
+  "directory": "E:/msys2/home/0xtrensetta/Projects/Ark/build",
+  "command": "E:\\msys2\\clang64\\bin\\c++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -IE:/msys2/home/0xtrensetta/Projects/Ark/include/language_synthesizer -isystem C:/Users/iwant/.conan2/p/b/spdlo29d218c344631/p/include -isystem C:/Users/iwant/.conan2/p/b/fmt016df6aca064f/p/include -m64 -stdlib=libc++ -g -std=c++23 -o src\\language_synthesizer\\CMakeFiles\\arklangsynth.dir\\LanguageSynthesizer.cpp.obj -c E:\\msys2\\home\\0xtrensetta\\Projects\\Ark\\src\\language_synthesizer\\LanguageSynthesizer.cpp",
+  "file": "E:/msys2/home/0xtrensetta/Projects/Ark/src/language_synthesizer/LanguageSynthesizer.cpp",
+  "output": "E:/msys2/home/0xtrensetta/Projects/Ark/build/src/language_synthesizer/CMakeFiles/arklangsynth.dir/LanguageSynthesizer.cpp.obj"
 }
 ]

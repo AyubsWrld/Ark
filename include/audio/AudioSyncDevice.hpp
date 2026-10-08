@@ -64,10 +64,10 @@ namespace Ark
 		UAudioSyncDevice() = default;
 		~UAudioSyncDevice() = default;
 
-		UAudioSyncDevice(UAudioSyncDevice&) = delete;
+		UAudioSyncDevice(const UAudioSyncDevice&) = delete;
 		UAudioSyncDevice(UAudioSyncDevice&&) = delete;
 
-		UAudioSyncDevice& operator=(UAudioSyncDevice&) = delete;
+		UAudioSyncDevice& operator=(const UAudioSyncDevice&) = delete;
 		UAudioSyncDevice& operator=(UAudioSyncDevice&&) = delete;
 
 		[[nodiscard]] EAudioDeviceError Clear()    noexcept;
